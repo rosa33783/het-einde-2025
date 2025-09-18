@@ -1,40 +1,40 @@
+
+/*code van opdracht  */
 /******************************/
 /* menu openen de MENU button */
 /******************************/
+const menuOpenButton = document.querySelector(".menubar button:nth-of-type(1)");
+const deNav = document.querySelector(".uitklapmenu");
+const menuSluitButton = document.querySelector(".menubar button:nth-of-type(2)");
 
-const menuOpenButton = document.querySelector("menu");
-const deNav = document.querySelector("header nav");
+
 
 menuOpenButton.onclick = openMenu;
-
-function openMenu(){
-  deNav.classList.add("toonMenu")
-}
-
-
-
-
-
-
-/************************************/
-/* menu sluiten met de sluit button */
-/************************************/
-
-const menuSluitButton = document.querySelector("nav button");
-
 menuSluitButton.onclick = sluitMenu;
 
-function sluitMenu(){
-  deNav.classList.remove("toonMenu");
+function openMenu() {
+  deNav.classList.add("toonMenu");          // menu openen
+  menuSluitButton.classList.add("sluitMenu"); // sluitbutton zichtbaar
+  menuOpenButton.classList.add("hidden");   // open button verbergen
+}
+
+function sluitMenu() {
+  deNav.classList.remove("toonMenu");        // menu sluiten
+  menuSluitButton.classList.remove("sluitMenu"); // sluitbutton verbergen
+  menuOpenButton.classList.remove("hidden");      // open button weer zichtbaar
 }
 
 
 
 
 
-const prevButton = document.querySelector(" main button:nth-of-type(1)");
-const nextButton = document.querySelector(" main button:nth-of-type(2)");
-const deUl = document.querySelector("main ul");
+
+
+
+/*carrousel*/
+const prevButton = document.querySelector(".carrousel button:nth-of-type(1)");
+const nextButton = document.querySelector(".carrousel button:nth-of-type(2)");
+const deUl = document.querySelector(".carrousel ul");
 
 
 function goToNextPhoto() {
@@ -55,3 +55,4 @@ function goToPrevPhoto() {
 
 
 prevButton.onclick = goToPrevPhoto;
+

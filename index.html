@@ -3,10 +3,10 @@
 	
 <head>
 	<meta charset="UTF-8">
-	<meta name="author" content="jouw naam">
+	<meta name="author" content="Rosalie">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<title>Index</title>
+	<title>Homepage</title>
 	
 	<link href="styles/style.css" rel="stylesheet">
 	<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
@@ -18,29 +18,31 @@
 	<header>
 		<h1></h1>
 
-		<section>
+		<section class="menubar">
 
-				<button><img src="images/menu.png" class="menu" height="40" width="40" alt=""></button>
+				<button class="menu" ><img src="images/menu.png"  alt=""></button>
 				<!--<a href="https://www.flaticon.com/free-icons/hamburger" title="hamburger icons">
 				Hamburger icons created by See Icons - Flaticon</a>-->
 
-				<details>
-					<summary>
-						<img src="images/search.png" height="30" width="30"  alt="">
+				<button><img src="images/close.png" alt=""></button>
+
+
+				<form>
+						<button class="zoekknop"><img src="images/search.png" alt=""></button>
 						<!--<a href="https://www.flaticon.com/free-icons/search" 
 							title="search icons">Search icons created by Fingerprint Designs - Flaticon</a>-->
-					</summary>
-				<input type="text" placeholder="Search.." title="Type in a category">
-				<button><img src="images/right-arrow.png" height="40" width="40" alt="" ></button>
-				    <!--<div> Icons made by <a href="https://www.flaticon.com/authors/prosymbols-premium" 
-					title="Prosymbols Premium"> Prosymbols Premium </a> 
-					from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>-->
-				</details>
+						<input type="text" placeholder="Search.." title="Type in a category">
+						<button class="pijltje"><img src="images/right-arrow.png" alt="" ></button>
+				   		 <!--<div> Icons made by <a href="https://www.flaticon.com/authors/prosymbols-premium" 
+						title="Prosymbols Premium"> Prosymbols Premium </a> 
+						from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>-->
+				</form>		
 
-				<a href="#"><img src="images/TheBerliner_Logo_1000px_RGB.png"  height="40" width="40" alt=""></a>
+				<a href="#"><img src="images/TheBerliner_Logo_1000px_RGB.png" alt=""></a>
 
 		</section>
 		
+		<section class="uitklapmenu">
 		<nav>
 			<ul>
 				<li>
@@ -88,46 +90,39 @@
 
 		<section class="submenu">
 			<ul>
-
-					<section>
-						<button><img img src="images/menu.png" height="40" width="40" alt=""></button>
-					
-							<li>
-								<button>Dark Mode</button>
-							</li>
-
-					</section>
-
+				<section>
 				<li>
 					<a href="#">Your favorites</a>
 				</li>
 				<li>
 					<a href="#">Webshop</a>
 				</li>
+				</section>
 
 				<section>
 					<ul>
 						<li>
-							<a><img img src="images/instagram-svgrepo-com.svg" height="40" width="40" alt=""></a>
+							<a><img img src="images/instagram-svgrepo-com.svg" alt=""></a>
 						</li>
 
 						<li>
-							<a><img img src="images/facebook-svgrepo-com.svg" height="40" width="40" alt=""></a>
+							<a><img img src="images/facebook-svgrepo-com.svg" alt=""></a>
 						</li>
 
 						<li>
-							<a><img img src="images/twitter-154-svgrepo-com.svg" height="40" width="40" alt=""></a>
+							<a><img img src="images/twitter-154-svgrepo-com.svg" alt=""></a>
 						</li>
 						
 						<li>
-							<a><img img src="images/youtube-168-svgrepo-com.svg" height="40" width="40" alt=""></a>
+							<a><img img src="images/youtube-168-svgrepo-com.svg" alt=""></a>
 						</li>
 					</ul>
 				</section>
 			</section>
+		</section>
 	
-			<section>
-
+		<section class="headergrid">
+			<section class="mainarticle">
 			<a href="#">
 			<img  src="images/Christina-Rivera-Garza_.jpg" alt=" a picture of Christina Rivera Garza">
 				
@@ -144,13 +139,14 @@
 							The Internationales Literaturfestival Berlin (ILB) is the highlight of the 
 							literary calendar. We spoke with author-curator Cristina […]
 						</p>
-					
+				
 			</section>
 			</a>
 			
+			
 		</section>
 
-		<section>
+		<section class="popular">
 			<h2>popular</h2>
 			<ul>
 				<li>
@@ -176,20 +172,27 @@
 			
 		</section>
 
-		<section>
+		<section class="getthemag">
 			<h2>get the mag</h2>
 			<a href="#"><img  src="images/getthemag.png" alt=""></a>
 		</section>
 
-		<section>
-			<h2>sign up for our newsletter</h2>
-			<p>Berlin events, freebees, food & news</p>
+		<section class="signupform">
+		<section class="text">
+			<p>
+				<span class="signup">sign up </span>
+				<span class="forour">for our</span>
+				<span class="newsletter">newsletter</span>	
+				<span class="berlinevents">Berlin events, freebees, food & news</span>
+			</p>
+		</section>
 			<img src="images/phone-newsletter-the-berliner.png" alt="">
 			<form>
-				<input type="email" name="E-mail address">
+				<input type="email" name="E-mail address" placeholder="E-mail address">
 				<button>subscribe</button>
 			</form>
 		</section>
+	</section>
 	</header>
 
 	<main>
@@ -198,7 +201,8 @@
 			<ul>
 				<li>
 					<a href="#"> 
-						<img src="images/movies.png" alt=""> 
+						<img src="images/movies.png" alt="">
+						
 						<h3>
 							September 2025: The month’s best film events
 						</h3>
@@ -207,12 +211,15 @@
 							from animation showcases to cult horror revivals, September brings a
 							packed lineup of Berlin film festival
 						</p>
+						
 					</a>
 				</li>
 
 				<li>
 					<a href="#">
 						<img src="images/smoking.jpg" alt="">
+
+						
 						<h3>
 							One in five male deaths in Berlin are caused by cigarettes
 						</h3>
@@ -221,12 +228,15 @@
 							New data shows that nearly one in five male deaths 
 							in Berlin is caused by smoking, with […]
 						</p>
+					
 					</a>
 				</li>
 
 				<li>
 					<a href="#">
 						<img src="images/traffic.jpg" alt="">
+
+						
 						<h3>
 							Drunken lorry driver crashes vehicle, blocking traffic in the Tiergarten tunnel
 						</h3>
@@ -235,12 +245,16 @@
 							A drunken lorry driver crashed his vehicle in Berlin’s 
 							Tiergarten Tunnel on Monday evening, blocking traffic through […]
 						</p>
+						
+					<h3>
 					</a>
 				</li>
 
 				<li>
 					<a href="#">
 						<img src="images/MarinaMonaco.jpg" alt="">
+
+					
 						<h3>
 							Raw moments: Marina Mónaco’s photos of the underground music scene
 						</h3>
@@ -249,12 +263,14 @@
 							Many Berliners don't 
 							realise that - thanks to the Cold War - our city has not one, […]
 						</p>
+						
 					</a>
 				</li>
 
 				<li>
 					<a href="#">
 						<img src="images/Freydanck.jpg" alt="">
+						
 						<h3>
 							Altes Museum: Berlin’s first and oldest museum turns 200
 						</h3>
@@ -262,16 +278,22 @@
 						<p>
 							If you don’t visit museums in the first few months after moving to a […]
 						</p>
+						
 					</a>
 				</li>
 			</ul>
+
+			<button class="loadmore">load more</button>
 		</section>
 
 		<section>
+			<h2>features</h2>
 			<ul>
 				<li>
 					<a href="#">
 						<img src="images/life.png" alt="">
+
+						
 						<h3>
 							Longevity hype in Berlin: Do you want to live forever?
 						</h3>
@@ -280,12 +302,14 @@
 							Berlin’s longevity scene is booming, with oxygen chambers, 
 							biohacking, and billionaires chasing youth in a city rethinking […]
 						</p>
+						
 					</a>
 				</li>
 
 				<li>
 					<a href="#">
 						<img src="images/zoo.jpg" alt="">
+						
 						<h3>
 							Tierpark: How the people’s zoo rose from the ruins
 						</h3>
@@ -294,12 +318,14 @@
 							Many Berliners don't realise that - 
 							thanks to the Cold War - our city has not one, […]
 						</p>
+						
 					</a>
 				</li>
 
 				<li>
 					<a href="#">
 						<img src="images/water.png" alt="">
+						
 						<h3>
 							Berlin’s tap dries up: The battle to save our drinking water
 						</h3>
@@ -308,14 +334,17 @@
 							Climate change, coal cuts, and thirsty industry are draining 
 							the city’s prized groundwater supply — but only […]
 						</p>
+					
 					</a>
 				</li>
 			</ul>
-			<button>load more</button>
+
+			<button class="loadmore">load more</button>
+
 		</section>
 
 		<section class="carrousel">
-
+			<h2>Giveaways</h2>
 			<ul>
 				<li>
 					<a href="#">
@@ -372,10 +401,9 @@
 				</li>
 			</ul>
 
-			<button>1</button>
-			<button>2</button>
-			<button>3</button>
-			
+			<button class="prev"></button>
+			<button class="next"></button>
+
 		</section>
 
 	</main>
