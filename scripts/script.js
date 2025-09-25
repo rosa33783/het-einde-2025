@@ -3,7 +3,7 @@
 /******************************/
 /* menu openen de MENU button */
 /******************************/
-const menuOpenButton = document.querySelector(".menubar button:nth-of-type(1)");
+const menuOpenButton = document.querySelector(".menu");
 const deNav = document.querySelector(".uitklapmenu");
 const menuSluitButton = document.querySelector(".menubar button:nth-of-type(2)");
 
@@ -25,8 +25,17 @@ function sluitMenu() {
 }
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleButton = document.querySelector('.submenu-toggle');
+  const submenu = document.querySelector('.submenu');
 
+  // standaard dicht zetten
+  submenu.classList.add('collapsed');
 
+  toggleButton.addEventListener('click', () => {
+    submenu.classList.toggle('collapsed');
+  });
+});
 
 
 
@@ -55,4 +64,40 @@ function goToPrevPhoto() {
 
 
 prevButton.onclick = goToPrevPhoto;
+
+
+
+
+
+
+/*zoekbalk */
+
+// selecteer elementen
+const zoekknop = document.querySelector(".zoekknop");
+const input = document.querySelector(".search-input");
+
+// toggle bij klik
+zoekknop.addEventListener("click", () => {
+  input.classList.toggle("hidden");
+  
+  // optioneel: focus meteen op het input-veld als het zichtbaar wordt
+  if (!input.classList.contains("hidden")) {
+    input.focus();
+  }
+});
+
+
+/*subscriptions hamburgermenu */
+const menuButton = document.querySelector(".subscrmenu");
+const menu = document.querySelector(".subscrUitklapMenu");
+
+menuButton.onclick = toggleMenu;
+
+function toggleMenu() {
+  if (menu.classList.contains("open")) {
+    sluitMenu();
+  } else {
+    openMenu();
+  }
+}
 
