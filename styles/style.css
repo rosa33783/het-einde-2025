@@ -21,9 +21,10 @@
 	--titles: "league-gothic", sans-serif;
 	--text: "merriweather", serif;
 	--color-lines-yourfave-webshop: solid #00000020 2px;
-
-
+	--label-font: "museo-sans" , sans-serif;
 }
+
+
 
 
 /****************/
@@ -55,6 +56,10 @@ img {
 	height:auto;
 }
 
+h2 {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
 
 h2, h3 {
 	font-family: var(--titles);
@@ -68,51 +73,65 @@ a:hover {
 	color:#f53515;
 }
 
-main {
-	padding: 1em 1em;
-}
 
 
 
 /*header*/
-header section:nth-of-type(1) {
+.menubar {
 	display: flex;
 	justify-content: space-between;
+	background-color: white;
+	align-items: center;
+	position:fixed;
+	z-index:100;
+	width:100%;
+	height:3em;
 }
 
-header section:nth-of-type(1) a img{
-	width: 5em;
-}
 
 /*hamburger menu button*/
-header section:nth-of-type(1) button{
+.menubar button{
 	order:3;
 	margin-left:auto;
 	background:none;
 	border:none;
-	padding-right:0.5em;
+	width:3em;
 }
 
-header section:nth-of-type(1) details{
+.menubar details{
 	order:1;
 	padding:0.5em 0.5em;
+	width:3em;
 }
 
-header section:nth-of-type(1) a{
-	width:4.5em;
-	padding-top:0.5em;
-	padding-left:0.8em;
+.menubar a{
 	order:2;
+	width:8em;
 }
-
-
-/*hamburger*/
 
 
 /*searchbar*/
-details summary{
-	list-style: none;
+.menubar form{
+	display: flex;
+	flex-direction: row;
+	
+	z-index:101;
 }
+
+.menubar form button:nth-of-type(1) img {
+	width:2em;
+}
+
+.hidden {
+	display: none; /* verberg open-button */
+  }
+
+
+  .search-input:not(.hidden) + .pijltje {
+  display: block;
+}
+
+
 
 
 /*nav styling*/
@@ -140,38 +159,163 @@ nav ul li{
 	
 }
 
+nav ul li:nth-of-type(10){
+	padding-bottom:0;
+
+}
+
 nav ul li:nth-of-type(1){
 	border-top:none;
 }
 
+.uitklapmenu {
+	display:none;
+	z-index: 100;
+	background-color: white;
+	display:grid;
+	position:fixed;
+	left:0;
+	right:0;
+	top:3em;
+
+	translate: -100%;
+	overflow-y: auto;
+
+  }
+  
+.uitklapmenu.toonMenu {
+	display: block; /* zichtbaar als menu open is */
+}
+  
+.menubar button:nth-of-type(2){
+	display: none; /* standaard sluitbutton verbergen */
+}
+
+
+.menubar button:nth-of-type(2).sluitMenu {
+	display: inline-block; /* zichtbaar wanneer menu open */
+}
+  
+.hidden {
+	display: none; /* verberg open-button */
+}
+
+
+header section:nth-of-type(2).toonMenu {
+	translate:-0%;
+	padding:0;
+	
+}
+
+header nav button {
+	justify-self:end;
+	padding-right:0.5em;
+	
+}
+
+header{
+	z-index:1000;
+}
 
 
 
+
+/*zoekknop*/
+
+
+.menubar form{
+	display:flex;
+	flex-direction: row-reverse;
+}
+
+
+.menubar form input{
+	position: absolute;
+	top:0;
+	width:100%;
+	padding:1em;
+	border-radius:0;
+	border:solid 2px #f53515 ;
+}
+
+  .pijltje {
+	  display:none;
+	position:absolute;
+	right: 0.2em;
+	top: 50%;
+	transform: translateY(-50%);
+	border: none;
+	background: none;
+	cursor: pointer;
+	padding: 0;
+  }
 /*************************/
-/* darkmode,faves,webshop*/
+/*faves,webshop*/
 /*************************/
 
-/**/
 .submenu {
 	background-color: #efeb9c;
 	font-family: var(--titles);
 	font-size:1.2em;
+	padding-top: 0.2em;
+}
+.submenu ul:nth-of-type(1) li{
+	margin:1em;
 }
 
-/*font styling button & a*/
-.submenu button{
-	font-family: var(--titles);
-	font-size:1em;
-}
-
-.submenu section:nth-of-type(1) {
-	padding-left:0.8em;
+.submenu ul:nth-of-type(1) li:nth-of-type(2){
 	padding-top:0.8em;
-	border-bottom: var(--color-lines-yourfave-webshop);
-
 }
 
 
+/*styling socials*/
+.submenu ul:nth-of-type(2){
+	display: flex;
+	flex-direction: row;
+	border-top: var(--color-lines-yourfave-webshop);
+}
+
+/*ik heb met opzet de images iets groter gemaakt omdat de hele kleine van de echte site
+zo klein zijn dat het niet toegankelijk is voor mensen met een motorieke beperking*/
+.submenu ul:nth-of-type(2) li a img{
+	width:1.8em;
+	height:1.8em;
+	margin:1em;
+	
+}
+
+.submenu-toggle{
+	display:none;
+}
+
+/*hoofd artikel*/
+
+main .hoofdgrid .mainarticle a{
+	display: flex;
+	align-items: flex-end;
+	margin-bottom:2em;
+}
+
+main .hoofdgrid .mainarticle a img{
+	position: relative;
+}
+
+main .hoofdgrid .mainarticle .mainarticletext{
+	position: absolute;
+	color: var(--color-main-article);
+	margin: 1em 1em;
+	/*kleine textshadow met waardes van chatgpt voor meer leesbaarheid*/
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.mainarticle .mainarticletext p:nth-of-type(1){
+	font-family:var(--label-font);
+	font-weight:bold;
+}
+
+.mainarticle .mainarticletext p:nth-of-type(2){
+	font-size:0.8em;
+}
 
 
 /*socials section*/
@@ -180,43 +324,772 @@ nav ul li:nth-of-type(1){
 
 
 /*popular styling*/
+.popular {
+	border-top:solid 0.3em;
+	border-color: var(--lines);
+	margin: 0.8em;
+}
 
-header section:nth-of-type(3){
+.popular h2{
+	padding-top:0.2em;
+	padding-bottom:0.6em;
+}
+
+.popular a{
+	font-family: var(--titles);
+}
+
+.popular li {
+	border-bottom: var(--color-lines-yourfave-webshop);
+	padding-top:0.8em;
+	padding-bottom:0.8em;
+}
+.popular li:nth-of-type(1) {
+	border-top: var(--color-lines-yourfave-webshop);
 
 }
 
-header section:nth-of-type(3)section{
+/*getthemag*/
+.getthemag{
+	border-top:solid 0.3em;
+	border-color: var(--lines);
+	margin: 2em 0.8em 2em 0.8em;
 }
 
-header section:nth-of-type(3) h2{
-	padding-bottom: 0.5em;
+.getthemag h2 {
+	margin-top:0.2em;
+	margin-bottom:0.5em; 
+}
+
+.getthemag img{
+	width: 100%;
+    object-fit: cover;
 
 }
 
-header section:nth-of-type(3) ul li{
-	padding:0.5em;
+/*signup newsletter*/
+.signupform {
+	background-color: #efeb9c;
+	margin: 0em 0.8em 0em 0.8em;
 
-	border-top:solid 0.1em;
-	border-color: lightgray;
+	display: grid;
+	grid-template-columns: 100px 350px;
+	grid-template-rows: repeat(3, 1fr);
+	gap:0;
+	grid-template-rows: auto;
+
+}
+
+.signupform img{
+	
+    height: auto;
+	width:7em;
+
+	grid-column: 1;
+	grid-row: 2 / span 2; /* neemt 2 rijen in */
+	padding-left:1em;
+	padding-right:1em;
+	margin-top: auto; /* pushes the image to the bottom */ 
+	
+}
+
+input[type=email] {
+    margin: 0px 10px 10px 0px;
+	padding:0.6em 0.8em 0.6em 0.8em;
+    text-align: center;
+	border:none;
+}
+
+.signupform button {
+	color: var(--color-main-article);
+	background-color: #f53515;
+	border:none;
+	margin: 0 10px 10px 0px;
+	padding: 0.6em 0.8em 0.6em 0.8em;
+    text-align: center;
+	border:none;
+	text-transform:uppercase;
+}
+
+
+.signupform .text {
+	grid-column: 1 / span 2; /* over 2 kolommen */
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-top:2em;	
+}
+
+.signupform .text p{ 
+	text-align:center;
+	font-family: var(--label-font);
+}
+
+
+.signupform form {
+	grid-column: 2;
+	grid-row: 2 / span 2; /* neemt 2 rijen in */
+	display: flex;
+	flex-direction: column;
+	margin-top:10px;
+}
+
+.signup{
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.forour{
+	text-transform: uppercase;
+	font-weight: 200;
+}
+
+.newsletter{
+	text-transform: uppercase;
+	font-weight: 200;
+}
+
+.berlinevents{
+	font-weight: 200;
+}
+
+
+/*latest section*/
+/* class .latest gebruikt ipv main section:nth-of-type(2) omdat dit makkelijker
+terug te vinden is en minder lang/gecompliceerd*/
+
+.latest ,
+.features {
+	margin: 2em 0.8em 2em 0.8em;
+}
+
+.latest img,
+.features img{
+	width:100%;
+	height: 220px;
+	object-fit: cover;
+	display:block;
+}
+
+.latest  h2,
+.features h2 {
+	border-top:solid 0.2em;
+	border-color: var(--lines);
+
+	margin-top: 0.3em;
+	margin-bottom:1em;
+}
+
+.latest h3,
+.features h3{
+	font-size: 1.5em;
+	margin: 0.3em 0em 0.3em 0em;
+}
+
+.latest  ul li a > p,
+.features  ul li a > p{
+	font-size: 0.9em;
+	margin: 0.3em 0em 2em 0em;
+}
+
+.category {
+	margin:0;
+	font-family: var(--label-font);
+	font-weight:800;
+	color:var(--color-main-article);
+	background-color:#f53515;
+	display:inline-block;
+	position:absolute;
+	bottom:0;
+	padding:2px 5px;
+}
+
+.latest .containerimg,
+.features .containerimg {
+	position:relative;
+}
+
+ .latest .containerimg img,
+ .features .containerimg img {
+	display:block;
+}
+
+
+/*load more knoppen main*/
+.loadmore {
+	color:var(--color-main-article);
+	background-color: black;
+	border:none;
+	font-family: var(--label-font);
+	text-transform: uppercase;
+
+	padding:1em 8em;
+	margin-bottom:5em;
+	transition: transform 0.3s ease;
+
+}
+
+.loadmore:hover{
+	transform: scaleX(0.95);
+}
+
+.centercontainer{
+	border:none;
+	display: flex;
+	justify-content: center;
+}
+
+/*styling carrousel*/
+.carrousel {
+	margin: 2em 0.8em 2em 0.8em;
+}
+
+.carrousel h2{
+	border-top:solid 0.2em;
+	border-color: var(--lines);
+
+	margin-top: 0.3em;
+	margin-bottom:1em;
+}
+
+.carrousel button{
+	width:15px;
+	height:15px;
+	border:none;
+	border-radius:50%;
+	background-color: #f5351580; /* chatgpt ~50% opacity */
+}
+
+.carrousel button:focus{
+	background-color: #f53515;;
+}
+
+.carrousel button:hover{
+	background-color: #f53515;;
+	}
+	
+
+.carrousel img{
+    max-width: 100%;
+    height: auto;
+	object-fit: fill;
+	
+}
+
+.carrousel p {
+	font-family: var(--titles);
+	letter-spacing: 1px;
 }
 
 .carrousel ul{
 	display: flex;
-	margin:0;
-	padding:0;
+	overflow-x: auto;
 	
-	
-	overflow:hidden;
+	gap:1em;
 	
 	scroll-snap-type:x mandatory;
 	scroll-behavior: smooth;
-}
+	scrollbar-width: none;  /*chatgpt gevraagd hoe ik de scrollbar weg haal*/
+
+  }
 
 .carrousel ul li{
-width:50%;
-flex-shrink:0;
-
-scroll-snap-align:start;
+	width:35%;
+	flex-shrink:0;
+	scroll-snap-align:start;
 }
-/*footer*/
 
+.carrousel section{
+	display:flex;
+	justify-content: center;
+	gap:0.5em;
+	border:none;
+}
+
+/*footer styling*/
+
+footer {
+	font-family: var(--text);
+	display: flex;
+	flex-direction: column;
+	gap:2em;
+	text-align:center;
+	margin: 4em 2em 4em 2em;
+
+
+}
+
+footer ul li a {
+	border-right:solid 0.1em;
+	border-color: var(--lines);
+	padding-right:0.5em;
+	font-weight:600;
+}
+
+footer li{
+	display:inline;
+
+
+}
+
+footer p{
+	color: #9b9b9b;
+}
+
+/**************************/
+/**subscriptions styling***/
+/**************************/
+
+/*general styling*/
+.subscriptions{
+	background-color:#f6f6f6;
+}
+
+/*header styling*/
+.subscriptions header{
+	background-color:var(--color-background);
+	padding-bottom:2.6em;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+
+/*hamburger knop*/
+.subscrmenu{
+	background:none;
+	border:none;
+	width:3em;
+	padding-left:1em;
+}
+
+.subscrUitklapMenu {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.4s ease;
+  }
+  
+  .subscrUitklapMenu.open {
+	max-height: 500px; /* of groter afhankelijk van de inhoud */
+  }
+  
+  .subscrmenu.active {
+	opacity: 0.7; /* optioneel: visueel verschil als menu open is */
+  }
+
+
+/*header positionering*/
+.subscrmenubar{
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border-bottom:solid 2px #F5F5F5;
+}
+
+.subscrmenubar a:nth-of-type(2){
+	width:1.8em;
+	padding-top:0.8em;
+	padding-right:0.5em;
+
+}
+
+.subscrmenubar button:nth-of-type(2){
+	display:flex;
+	flex-direction: row;
+	align-items:flex-start;
+	border:none;
+	padding:0.8em 1em 0em 1em;
+	font-family: var(--label-font);
+	font-size:1em;
+	font-weight:200;
+	color:#7a7a7a;
+
+}
+
+.subscrmenubar button:nth-of-type(2) img{
+	width:1.5em;
+	padding-right:0.2em;
+}
+
+/*derberliner logo*/
+.subscrmenubar a:nth-of-type(1){
+	padding:0.6em 0em 0.6em 1em;
+	margin-right:auto;
+	width:8em;
+}
+
+
+
+
+/**************/
+/*main styling*/
+
+
+
+
+.subscriptions main section:nth-of-type(1) {
+	display:flex;
+	flex-direction: column;
+	align-items:flex-start;
+	gap:1em;
+	padding:2em 2em 1em 2em;
+}
+
+.subscriptions h2{
+	font-family: var(--label-font);
+	margin-right:auto;
+	font-size:2em;
+	font-weight:570;
+	color:#232323;
+}
+
+
+.subscriptions main section:nth-of-type(1) p{
+	font-family: var(--label-font);
+	font-weight:200;
+	color:#232323;
+	text-align:center;
+}
+
+.subscriptions select{
+	width:100%;
+	border-radius:0%;
+	border-color:#00000040;
+	padding:1em;
+}
+
+
+.subscriptions main section:nth-of-type(1) p:nth-of-type(2){
+	font-family: var(--label-font);
+	font-size:1.1em;
+	font-weight:200;
+	color:#7a7a7a;
+}
+
+/*positionering imgages*/
+.subscriptions main section:nth-of-type(2) ul{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items:center;
+	gap:2em;
+	padding-bottom:2em;
+}
+
+.subscriptions main section:nth-of-type(2) ul img{
+	display: block;
+}
+
+
+/*text onder magazines*/
+.subscriptions main section:nth-of-type(2) ul p{
+	display:flex;
+	flex-direction:column;
+	gap:0.5em;
+	align-items: center;
+	background-color:white;
+	padding-top:1em;
+	padding-bottom:1em;
+	font-family:var(--label-font);
+	font-weight:200;
+	color:#7a7a7a;
+}
+
+/*prijzen*/
+.subscriptions main section:nth-of-type(2) ul p span{
+	font-weight:570;
+	color:black;
+}
+
+.subscriptions main section > p{
+	font-family: var(--label-font);
+	font-size:1em;
+	font-weight:200;
+	color:#7a7a7a;
+	padding-bottom:2em;
+	padding-left:2em;
+}
+
+.backToTop{
+	display: flex;
+	justify-content: flex-end;
+	margin-right:2em;
+	margin-bottom:0.7em;
+	font-family: var(--label-font);
+	font-size:1.1em;
+	color:#7a7a7a;
+}
+
+.subscriptions footer{
+	background-color:white;
+	margin:0;
+	gap:0;
+	padding-top:4em;
+}
+
+.subscriptions footer > a{
+	font-family: var(--label-font);
+	font-weight:200;
+	text-align: start;
+	padding-left:1em;
+ 	color:#24b9d7;
+}
+
+.subscriptions footer details ul{
+	display: flex;
+	flex-direction: column;
+	text-align: start;
+	background-color:#f6f6f6;
+	
+}
+
+.subscriptions footer details ul a{
+	font-family: var(--label-font);
+ 	font-weight:400;
+	 border-right:none;
+	 color:#232323;
+}
+
+
+
+.subscriptions footer details ul li{
+	border-right:none;
+	border-bottom: solid 2px white;
+	padding:1em;
+}
+
+.subscriptions footer summary{
+	display:flex;
+	justify-content: space-between;
+	gap:0;
+	padding: 1em;
+	border-bottom:solid 2px #F5F5F5;
+	font-family: var(--label-font);
+	text-transform: uppercase;
+	font-weight:550;
+
+}
+
+.subscriptions footer .storeinfo ul{
+	background-color:white;
+	padding:1em;
+}
+
+.subscriptions footer .storeinfo ul li{
+	padding: 0em;
+}
+
+.subscriptions footer .storeinfo ul li p{
+    font-family: var(--label-font);
+	font-weight:200;
+	font-size:0.9em;
+	
+
+}
+
+/*src chatgpt*/
+summary::after {
+	content: "▾";       /* pijltje omlaag */
+	font-size: 0.8em;
+  }
+  
+  details[open] summary::after {
+	  width:1em;
+	content: "▴";       /* pijltje omhoog als open */
+  }
+
+
+@media (max-width:767px) {
+	.uitklapmenu {
+		bottom:0;
+	}
+}
+
+
+@media (min-width: 768px){
+ 
+	body{
+		margin-left:4em;
+		margin-right:1em;
+
+	}
+
+    .uitklapmenu{
+		translate:unset;
+		padding:0;
+		background:none;
+		top:8em;
+	  }
+	  
+	  .menu {
+		/* JOUW CODE HIER - stap 7 */
+		display:none;
+	  }
+	  
+	   nav  ul {
+		/* JOUW CODE HIER - stap 9 */
+
+		display:flex;
+		flex-direction: row;
+		background-color:white;
+		margin-left:2em;
+
+		 /* hiermee zijn de andere grid-properties niet meer relevant */
+	  }
+
+	  nav ul li{
+		  border-top:none;
+		border-right: solid 2px #9b9b9b;;
+		padding: 0em 0.3em 0em 0.3em;
+
+	  }
+
+	  .menubar{
+		display: flex;
+		justify-content: flex-start;
+		height:10em;
+	
+	  }
+
+	  .menubar a{
+		width:20em;
+	}
+
+
+
+	
+	
+	
+	.submenu-toggle{
+		display:flex;
+		position:fixed;
+		padding:1em;
+		background: none;
+		border:none;
+	}
+
+	.submenu-toggle img{
+		width:2em;
+	}
+
+	.submenu{	
+		width:30%;
+		height:100%;
+		position: fixed;
+		margin-top:2em;
+		top:0;
+		transition: width 0.3s ease; /* animatie op breedte */
+		overflow: hidden;          
+
+	}
+
+	.submenu.collapsed {
+  		width: 50px; /* bijvoorbeeld alleen iconen zichtbaar */
+	}
+
+	.submenu.collapsed ul:first-of-type {
+		display: none;
+	  }
+
+	  .submenu.collapsed ul:nth-of-type(2) {
+		margin-top:20em;
+	  }
+	  
+
+
+
+
+
+
+
+	.submenu ul:nth-of-type(1) li{
+		margin-top:0.5em;
+	}
+
+	.submenu ul:nth-of-type(1){
+		margin-top:3em;
+	}
+
+
+	/*socials images*/
+	.submenu ul:nth-of-type(2){
+		width:100%;
+		display:block;
+		border:none;
+		margin-top: 2em;
+		margin-left:0.5em;
+	}
+
+	.submenu ul:nth-of-type(2) li a img{
+		width:1em;
+		height:1em;
+		margin:0.5em;
+		
+	}
+
+	/*zoekknop*/
+	header form{
+		position:fixed;
+		top:0;
+		left:0;
+	}
+
+
+	/*positionering mainarticle,getthemag,subscribe,popular*/
+
+	
+	.hoofdgrid{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+		grid-column-gap: 0px;
+		grid-row-gap: 20px;
+	}
+			
+	.signupform { 
+		grid-area: 1 / 1 / 2 / 4; 
+	    margin-top:10em;
+		
+	}
+
+	.mainarticle { grid-area: 2 / 1 / 4 / 3; }
+
+	.getthemag { grid-area: 2 / 3 / 3 / 4; }
+
+	.popular{ grid-area: 3 / 3 / 4 / 4; }
+	
+
+
+	/*positionering in 2 columns src:https://cssgrid-generator.netlify.app/*/ 
+	.features ul,
+	.latest ul{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-column-gap: 15px;
+		grid-row-gap: 0px;
+
+	}
+
+
+
+
+}
+
+
+
+@media (min-width: 768px){
+
+	/*positionering in 3 columns */ 
+
+	.features ul,
+	.latest ul{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(1, 1fr);
+		grid-column-gap: 15px;
+		grid-row-gap: 0px;
+
+	}
+
+
+}
