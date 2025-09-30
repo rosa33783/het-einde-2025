@@ -37,14 +37,14 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Je opdracht:
   https://www.the-berliner.com/
+  https://shop.exberliner.com/en/3-subscriptions
 
   #### Screenshot(s) van de eerste pagina (small screen): 
-  home
-  <img src="readme-images/" width="375px" alt="de home pagina van berliner mag">
+  <img src="readme-images/www.the-berliner.com_(iPhone 12 Pro) (1).png" width="375px" alt="de home pagina van berliner mag">
 
   #### Screenshot(s) van de tweede pagina (small screen):
   subscribe 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="subscribe pagina">
+  <img src="readme-images/SSsubscriptions.png" width="375px" alt="subscribe pagina">
  
 </details>
 
@@ -68,6 +68,19 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   er zijn in ieder geval geen logische volgordes wanneer je door de headings tabt.
 
   Lists: alleen scripts en divs
+
+  Images:geen alt attributes geen alternatieve text voor meer gecompliceerde images (er is een image waarin text staat in een klein     telefoontje op de homepage en dat kan je nu dus niet lezen als persoon met zichtsbeperking). 
+  
+  Media(video en audio):bevatten mijn paginas niet
+
+  Controls: a element wordt niet voor links gebruikt. buttons hebben geen focus states, button element wordt niet alleen voor buttons gebruikt. 
+
+  Appearance: Dark en light mode doen het alleen op de homepage. subscriptions heeft geen darkmode.
+
+  Animation: animaties zijn rustig en klein(knopjes die een kwartslag draaien als je klikt etc)
+
+  Color contrast: goed contrast op de website. 
+  
 </details>
 
 
@@ -77,14 +90,9 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 <details>
   <summary>uitwerken na afloop 3<sup>e</sup> werkgroep</summary>
 
-  ### de hele pagina: 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="breakdown van de hele pagina">
-
-  ### dynamisch deel (bijv menu): 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="breakdown van een dynamisch deel">
-
-  ### wellicht nog een dynamisch deel (bijv filter): 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="breakdown van nog een dynamisch deel">
+  ### homepage en subscription breakdown: 
+  dynamische gedeeltes en pagina opzet
+  <img src="readme-images/breakdown schets.png" width="375px" alt="breakdown van de hele pagina">
 
 </details>
 
