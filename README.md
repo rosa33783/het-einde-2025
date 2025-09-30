@@ -40,7 +40,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   #### Screenshot(s) van de eerste pagina (small screen): 
   home
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="de home pagina van berliner mag">
+  <img src="readme-images/" width="375px" alt="de home pagina van berliner mag">
 
   #### Screenshot(s) van de tweede pagina (small screen):
   subscribe 
@@ -56,8 +56,18 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken na test in 2<sup>e</sup> werkgroep</summary>
 
   ### Bevindingen
-  Lijst met je bevindingen die in de test naar voren kwamen:
+  Global code: er zijn geen pagina titels en er is bijna alleen maar inline coding
 
+  Keyboard:de focus style is soms onzichtbaar of heeft hele onduidelijke stippellijntjes 
+  in plaats van een duidelijke omlijning. De keyboard focus matched totaal niet de visuele layout. opgegeven moment gaat de focus halverwege de pagina naar de browser tabs.
+
+  Moible and touch: De website kan op de telefoon niet horizontaal worden geroteerd. Dan staan
+  er onderdelen over elkaar heen en zijn er rare lege ruimtes. Bij de navbar zijn de mens en zoekknop best klein.
+
+  Headings: Bijna alles is met scripts en divs geschreven dus dat is moeilijk om te zeggen.
+  er zijn in ieder geval geen logische volgordes wanneer je door de headings tabt.
+
+  Lists: alleen scripts en divs
 </details>
 
 
@@ -88,26 +98,20 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor 1<sup>e</sup> voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+  Al veel html geschreven voor de homepage en ben bezig met de css.
 
 
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
-
+  
+  
 
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  De feedback was dat ik goed op weg was maar na naar mijn html opzet te hebben gekeken
+  heb ik het advies gekregen om het bovenste artikel en wat andere onderdelen uit de header te halen. Qua opzet dacht ik dat dat ook in de header moest. Het was logischer in de main.
 
 </details>
 
@@ -127,20 +131,21 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
+  vragen:
+  - Hoe maak ik het signupform op de homepage responsive
+  - Moeten er ook links en rechts pijlen bij carrousel? (er zijn al bolletjes er onder)
+  - De "sub" menubar (geel) moet links en losbreken van het uitklapmenu wanneer het scherm groter wordt. 
+
 
 
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-- ...
+  uitkomsten
+  - grid gebruiken om onderdelen responsive te maken
+  - De pijlen moeten er ook bij en dit kan ik met mediaquerys zichtbaar en onzichtbaar maken
+  - Dit kan ik positioneren door of met grid of position relative/absolute te gebruiken.
+
 
 </details>
 
@@ -168,26 +173,28 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor 3<sup>e</sup> voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+  tweede pagina ook opgestelt.
 
 
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
+  vragen:
+  - De .hoofdgrid (bovenste gedeelte op de homepage) is moeilijk vorm te geven omdat alles mee lijkt te bewegen (verticaal) als ik het scherm kleiner en groter maakt. Hoe zorg ik dat alles op zijn plek blijft?
+  - Ik had ook nog de vraag of er ook een darkmode moest want dit was ik even vergeten.
+  - Animaties??
+
 
 
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Volgens Ivo zag het er goed genoeg uit en zijn dat kleine details. Het is responsive geworden
+    en ik begrijp grid beter door er mee te hebben moeten werken en dat is te zien.
+  - Ja er moet een darkmode bij beide sites maar dit is heel makkelijk te doen met mediaquerys 
+    en is helemaal niet zo uitdagend als ik dacht.
+  - De animaties zijn niet mijn prioriteit aangezien ik responsive heb gekozen. Ik heb al best wat
+    javascript en dat is al best wat uitdaging. Mocht ik achteraf nog tijd hebben dan kan ik de animaties toevoegen.
 
 </details>
 
@@ -201,6 +208,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor eindgesprek</summary>
 
   ### Je uitkomst - karakteristiek screenshots:
+  <img src="readme-images/homepageMobile.html.png" width="375px" alt="uitomst opdracht 1">
   <img src="readme-images/" width="375px" alt="uitomst opdracht 1">
 
 
@@ -225,12 +233,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 <details open>
   <summary>continu bijhouden terwijl je werkt</summary>
 
-  Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg). 
-  Nb. ChatGpT en andere AI horen er ook bij.
-  Nb. Vermeld de bronnen ook in je code.
+  1. Chatgpt
+  2. https://www.svgrepo.com/ voor iconen die interacteren met mediaquery
+  3. https://www.the-berliner.com voor images homepage
+  4. https://shop.exberliner.com/en/3-subscriptions voor images subscriptions
+  5. https://www.flaticon.com/authors/prosymbols-premium iconen die niet uit maakten voor darkmode
+  6. https://cssgrid-generator.netlify.app/ om grid te genereren
+  7. code dlo opdracht responsive hamburgermenu
 
-  1. bron 1
-  2. bron 2
-  3. ...
 
 </details>
