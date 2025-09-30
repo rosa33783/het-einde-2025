@@ -92,7 +92,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### homepage en subscription breakdown: 
   dynamische gedeeltes en pagina opzet
-  <img src="readme-images/breakdown schets.png" width="375px" alt="breakdown van de hele pagina">
+  <img src="readme-images/breakdownSchets.png" width="375px" alt="breakdown van de hele pagina">
 
 </details>
 
