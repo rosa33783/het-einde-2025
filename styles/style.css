@@ -6,13 +6,11 @@
 }
 
 
-
-
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
-	/* startje */
+	/* BerlinerMag */
 	--color-text: black;
 	--lines:black;
 	--color-background: white;
@@ -22,7 +20,72 @@
 	--text: "merriweather", serif;
 	--color-lines-yourfave-webshop: solid #00000020 2px;
 	--label-font: "museo-sans" , sans-serif;
+	--accent-color:#f53515;
+	--label-bg:#f53515;
+	--submenu-en-subscribe:#efeb9c;
+	--loadmore:black;
+	--zoekknop:#f53515;
+
+	/* beide */
+	--bg-berlinerlogo:none;
+	
+
+	/* Subscriptions */
+	--sub-bg:#f6f6f6;
+	--vlakken:white;
+	--text-mags:#7a7a7a;
+	--prijzen:black;
+	--subtext:#232323;
+	--subtext2:#7a7a7a;
+	--footerbg:white;
+	--footerbgli:#f6f6f6;
+	--footerbtn:#333;
+	--trademark:#24b9d7;
+	--nav-text:#7a7a7a;
+	--winkelmandjebg:#f6f6f6;
+	--footerp: #9b9b9b;
+
+
 }
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+		/* berlinermag */
+		--color-background: black;
+		--submenu-en-subscribe:#848152;
+		--color-text:white;
+		--loadmore:#333;
+		--lines:white;
+		--label-bg:#848152;
+		--zoekknop:black;
+		--backtotop:#7a7a7a;
+
+		/* subscriptions */
+		--vlakken:#848152;
+		--sub-bg:black;
+		--text-mags:white;
+		--prijzen:white;
+		--subtext:white;
+		--subtext2:white;
+		--footerbg:#848152;
+		--footerbgli:#a19d64;
+		--footerbtn:white;
+		--backtotop:white;
+		--trademark:white;
+		--nav-text:white;
+		--winkelmandjebg:white;
+		--footerp: white;
+
+		/* beide */
+		--bg-berlinerlogo:white;
+	
+
+	}
+
+
+}
+
 
 
 
@@ -39,12 +102,27 @@
     box-sizing: border-box;
 }
 
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
 a {
 	text-decoration: none;
 }
 
 li{
 	list-style: none;
+}
+
+
+body {
+	background-color:var(--color-background);
 }
 
 body a {
@@ -59,6 +137,7 @@ img {
 h2 {
 	text-transform: uppercase;
 	letter-spacing: 1px;
+	color:var(--color-text);	
 }
 
 h2, h3 {
@@ -70,70 +149,132 @@ p {
 }
 
 a:hover {
-	color:#f53515;
+	color:var(--accent-color);
+}
+
+svg{
+	fill:var(--color-text);
+	stroke:var(--color-text);
 }
 
 
-
+/****************/
+/*  BERLINERMAG */
+/****************/
 
 /*header*/
+/* uitgeklapte hamburger styling */
 .menubar {
 	display: flex;
 	justify-content: space-between;
-	background-color: white;
 	align-items: center;
 	position:fixed;
 	z-index:100;
+
 	width:100%;
 	height:3em;
+
+	background-color: var(--color-background);
 }
 
 
-/*hamburger menu button*/
+/*algemene styling menubuttons*/
+/* order gegeven voor logische opbouw volgorde maar niet de volgorder van html veranderen */
 .menubar button{
 	order:3;
 	margin-left:auto;
-	background:none;
+
+	width:4em;
+	padding-right:1em;
+
 	border:none;
-	width:3em;
 }
 
-.menubar details{
-	order:1;
-	padding:0.5em 0.5em;
-	width:3em;
+/* hamburger knop*/
+.menu{
+	background:none;
 }
 
+/* logo */
 .menubar a{
 	order:2;
 	width:8em;
 }
 
+.menubar a img{
+	background:var(--bg-berlinerlogo);
+	padding:0.2em;
+}
 
-/*searchbar*/
+
+/* zoekbalk */
 .menubar form{
 	display: flex;
 	flex-direction: row;
-	
 	z-index:101;
+	order:1;
+
+	padding:0.5em 0.5em;
 }
 
+/* search vlak */
+.menubar form input{
+	position: absolute;
+	top:0;
+	left:4em;
+	width:100%;
+	padding:1.2em;
+
+	border-radius:0;
+	background-color: var(--color-background);
+	border:solid 2px var(--accent-color) ;
+}
+
+.zoekknop{
+	background: none;
+}
+/* pijltje */
 .menubar form button:nth-of-type(1) img {
-	width:2em;
+	width:1.5em;
 }
 
-.hidden {
-	display: none; /* verberg open-button */
-  }
+.pijltje {
+	display:none;
+	position:absolute;
+	right: 0.2em;
+	top: 1em;
 
+	border: none;
+	background: none;
+	cursor: pointer;
+	padding: 0;
+}
 
-  .search-input:not(.hidden) + .pijltje {
-  display: block;
+ /* laat pijltje en zoekbalk tevoorschijn komen wanneer de knop word geklikt */
+.search-input:not(.hidden) + .pijltje {
+   display: block;
+}
+
+.zoekknop svg{
+	fill:none;
+	stroke-width:0.15em;
+}
+
+/* kruisje */
+.zoekclose svg{
+	stroke:var(--color-text);
+	fill:var(--color-text);
+	stroke-width:0.15em;
+}
+
+.zoekclose{
+	background:none;
 }
 
 
 
 
+/*****************/
 /*nav styling*/
 nav ul{
 	display:flex;
@@ -146,54 +287,66 @@ nav ul{
 
 }
 
+/* nav links styling */
 nav ul li a{
 	color: var(--color-text);
+	font-family: var(--titles);
 }
 
+/* spacing en lines */
 nav ul li{
 	padding-top:0.5em;
 	padding-bottom:1.2em;
 
 	border-top:solid 0.2em;
 	border-color: var(--lines);	
-	
 }
 
 nav ul li:nth-of-type(10){
 	padding-bottom:0;
-
 }
 
 nav ul li:nth-of-type(1){
 	border-top:none;
 }
 
+/* src is dlo hamburgermenu opdracht */
 .uitklapmenu {
 	display:none;
 	z-index: 100;
-	background-color: white;
 	display:grid;
 	position:fixed;
-	left:0;
-	right:0;
-	top:3em;
-
 	translate: -100%;
 	overflow-y: auto;
 
-  }
-  
+	left:0;
+	right:0;
+	top:3em;
+	bottom:0;
+
+	background-color:var(--color-background);
+}
+
+
+/* src chatgpt (lelijke dubbele scrollbar weg) */
+.uitklapmenu::-webkit-scrollbar {
+	display: none;             /* Chrome, Safari */
+}
+
+
+  /* src is dlo hamburgermenu opdracht */
 .uitklapmenu.toonMenu {
 	display: block; /* zichtbaar als menu open is */
 }
   
-.menubar button:nth-of-type(2){
+.menubar > button:nth-of-type(2){
 	display: none; /* standaard sluitbutton verbergen */
 }
 
 
-.menubar button:nth-of-type(2).sluitMenu {
+.menubar > button:nth-of-type(2).sluitMenu {
 	display: inline-block; /* zichtbaar wanneer menu open */
+	background: none; /*buttoncolor op none*/
 }
   
 .hidden {
@@ -204,61 +357,20 @@ nav ul li:nth-of-type(1){
 header section:nth-of-type(2).toonMenu {
 	translate:-0%;
 	padding:0;
-	
-}
-
-header nav button {
-	justify-self:end;
-	padding-right:0.5em;
-	
-}
-
-header{
-	z-index:1000;
 }
 
 
 
-
-/*zoekknop*/
-
-
-.menubar form{
-	display:flex;
-	flex-direction: row-reverse;
-}
-
-
-.menubar form input{
-	position: absolute;
-	top:0;
-	width:100%;
-	padding:1em;
-	border-radius:0;
-	border:solid 2px #f53515 ;
-}
-
-  .pijltje {
-	  display:none;
-	position:absolute;
-	right: 0.2em;
-	top: 50%;
-	transform: translateY(-50%);
-	border: none;
-	background: none;
-	cursor: pointer;
-	padding: 0;
-  }
 /*************************/
-/*faves,webshop*/
-/*************************/
+/*submenu()gele achtergrond*/
 
 .submenu {
-	background-color: #efeb9c;
+	background-color: var(--submenu-en-subscribe);
 	font-family: var(--titles);
 	font-size:1.2em;
 	padding-top: 0.2em;
 }
+
 .submenu ul:nth-of-type(1) li{
 	margin:1em;
 }
@@ -267,29 +379,32 @@ header{
 	padding-top:0.8em;
 }
 
-
 /*styling socials*/
 .submenu ul:nth-of-type(2){
 	display: flex;
 	flex-direction: row;
+	gap:1em;
 	border-top: var(--color-lines-yourfave-webshop);
+
 }
 
-/*ik heb met opzet de images iets groter gemaakt omdat de hele kleine van de echte site
-zo klein zijn dat het niet toegankelijk is voor mensen met een motorieke beperking*/
-.submenu ul:nth-of-type(2) li a img{
+.submenu ul:nth-of-type(2) li{
+	padding:1em;
+}
+
+.submenu ul:nth-of-type(2) img{
 	width:1.8em;
 	height:1.8em;
-	margin:1em;
-	
 }
 
 .submenu-toggle{
 	display:none;
 }
 
-/*hoofd artikel*/
 
+
+/****************/
+/*hoofd artikel*/
 main .hoofdgrid .mainarticle a{
 	display: flex;
 	align-items: flex-end;
@@ -300,9 +415,14 @@ main .hoofdgrid .mainarticle a img{
 	position: relative;
 }
 
+main .hoofdgrid .mainarticle h2{
+	color:white;
+	margin-bottom:0.5em;
+}
+
 main .hoofdgrid .mainarticle .mainarticletext{
 	position: absolute;
-	color: var(--color-main-article);
+	color: white;
 	margin: 1em 1em;
 	/*kleine textshadow met waardes van chatgpt voor meer leesbaarheid*/
 	text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
@@ -369,17 +489,19 @@ main .hoofdgrid .mainarticle .mainarticletext{
 
 /*signup newsletter*/
 .signupform {
-	background-color: #efeb9c;
+	background-color: var(--submenu-en-subscribe);
 	margin: 0em 0.8em 0em 0.8em;
 
 	display: grid;
-	grid-template-columns: 100px 350px;
-	grid-template-rows: repeat(3, 1fr);
+	grid-template-columns: (8em, 1fr);
+	grid-template-rows: (8em, 8em);
 	gap:0;
 	grid-template-rows: auto;
 
 }
 
+
+/* src chatgpt */
 .signupform img{
 	
     height: auto;
@@ -393,6 +515,7 @@ main .hoofdgrid .mainarticle .mainarticletext{
 	
 }
 
+/* vorgmgeving email vlak */
 input[type=email] {
     margin: 0px 10px 10px 0px;
 	padding:0.6em 0.8em 0.6em 0.8em;
@@ -400,9 +523,10 @@ input[type=email] {
 	border:none;
 }
 
+
 .signupform button {
 	color: var(--color-main-article);
-	background-color: #f53515;
+	background-color: var(--accent-color);
 	border:none;
 	margin: 0 10px 10px 0px;
 	padding: 0.6em 0.8em 0.6em 0.8em;
@@ -418,11 +542,20 @@ input[type=email] {
 	flex-direction: column;
 	justify-content: center;
 	padding-top:2em;	
+	margin-bottom:1em;
 }
 
-.signupform .text p{ 
+/* de breedte van de sign up for our newsletter text */
+.signupform .text p:nth-of-type(1){
+	margin-left:4em;
+	margin-right:4em;
+}
+
+
+.signupform p{ 
 	text-align:center;
 	font-family: var(--label-font);
+	color:var(--color-text);
 }
 
 
@@ -434,22 +567,27 @@ input[type=email] {
 	margin-top:10px;
 }
 
+/* styling text */
 .signup{
 	text-transform: uppercase;
 	font-weight: 600;
+	font-size:1.5em;
 }
 
 .forour{
 	text-transform: uppercase;
 	font-weight: 200;
+	font-size:1.5em;
 }
 
 .newsletter{
 	text-transform: uppercase;
 	font-weight: 200;
+	font-size:1.5em;
 }
 
 .berlinevents{
+	font-size:1.5em;
 	font-weight: 200;
 }
 
@@ -492,16 +630,18 @@ terug te vinden is en minder lang/gecompliceerd*/
 	margin: 0.3em 0em 2em 0em;
 }
 
+/* labels links onderin de images */
 .category {
 	margin:0;
-	font-family: var(--label-font);
-	font-weight:800;
-	color:var(--color-main-article);
-	background-color:#f53515;
 	display:inline-block;
 	position:absolute;
 	bottom:0;
 	padding:2px 5px;
+
+	font-family: var(--label-font);
+	font-weight:800;
+	color:var(--color-main-article);
+	background-color:var(--label-bg);
 }
 
 .latest .containerimg,
@@ -518,7 +658,7 @@ terug te vinden is en minder lang/gecompliceerd*/
 /*load more knoppen main*/
 .loadmore {
 	color:var(--color-main-article);
-	background-color: black;
+	background-color:var(--loadmore);
 	border:none;
 	font-family: var(--label-font);
 	text-transform: uppercase;
@@ -541,6 +681,7 @@ terug te vinden is en minder lang/gecompliceerd*/
 
 /*styling carrousel*/
 .carrousel {
+	position:relative;
 	margin: 2em 0.8em 2em 0.8em;
 }
 
@@ -552,20 +693,21 @@ terug te vinden is en minder lang/gecompliceerd*/
 	margin-bottom:1em;
 }
 
-.carrousel button{
+.carrousel div:nth-of-type(2) button{
 	width:15px;
 	height:15px;
 	border:none;
 	border-radius:50%;
 	background-color: #f5351580; /* chatgpt ~50% opacity */
+
 }
 
-.carrousel button:focus{
-	background-color: #f53515;;
+.carrousel div:nth-of-type(2) button:focus{
+	background-color: var(--accent-color);
 }
 
-.carrousel button:hover{
-	background-color: #f53515;;
+.carrousel div:nth-of-type(2) button:hover{
+	background-color: var(--accent-color);
 	}
 	
 
@@ -599,10 +741,32 @@ terug te vinden is en minder lang/gecompliceerd*/
 	scroll-snap-align:start;
 }
 
-.carrousel section{
+/* positionering knoppen links en rechts carrousel */
+.carrousel div:nth-of-type(1){
+	position: absolute;
+	bottom: 9em;               
+	left: 0;
+	right: 0;
+	
+	/* src chatgpt */
+	display: flex;             /* activeer flexbox */
+	justify-content: space-between; /* knoppen links & rechts */
+	align-items: center;       /* verticaal centreren */
+}
+
+
+.carrousel div:nth-of-type(2){
 	display:flex;
 	justify-content: center;
 	gap:0.5em;
+	border:none;
+}
+
+
+/* klein scherm geen links en rechts knoppen alleen de bolletjes */
+.carrousel div:nth-of-type(1) button {
+	display:none;
+	background-color: none;
 	border:none;
 }
 
@@ -614,7 +778,7 @@ footer {
 	flex-direction: column;
 	gap:2em;
 	text-align:center;
-	margin: 4em 2em 4em 2em;
+	margin: 6em 2em 2em 2em;
 
 
 }
@@ -626,6 +790,7 @@ footer ul li a {
 	font-weight:600;
 }
 
+
 footer li{
 	display:inline;
 
@@ -633,24 +798,31 @@ footer li{
 }
 
 footer p{
-	color: #9b9b9b;
+	color: var(--footerp);
 }
 
 /**************************/
 /**subscriptions styling***/
 /**************************/
+  
 
+  
 /*general styling*/
 .subscriptions{
-	background-color:#f6f6f6;
+	background-color:var(--sub-bg);
 }
+
+.subscriptions nav ul.toonMenu{
+	max-height: 500px;
+	background-color: white;
+
+} 
 
 /*header styling*/
 .subscriptions header{
 	background-color:var(--color-background);
 	padding-bottom:2.6em;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-
 }
 
 
@@ -662,20 +834,6 @@ footer p{
 	padding-left:1em;
 }
 
-.subscrUitklapMenu {
-	max-height: 0;
-	overflow: hidden;
-	transition: max-height 0.4s ease;
-  }
-  
-  .subscrUitklapMenu.open {
-	max-height: 500px; /* of groter afhankelijk van de inhoud */
-  }
-  
-  .subscrmenu.active {
-	opacity: 0.7; /* optioneel: visueel verschil als menu open is */
-  }
-
 
 /*header positionering*/
 .subscrmenubar{
@@ -685,23 +843,31 @@ footer p{
 	border-bottom:solid 2px #F5F5F5;
 }
 
+/* account image */
 .subscrmenubar a:nth-of-type(2){
-	width:1.8em;
-	padding-top:0.8em;
-	padding-right:0.5em;
+	display:flex;
 
+	padding:0.3em 1em;
+	background:var(--bg-berlinerlogo);
 }
 
+.subscrmenubar a:nth-of-type(2) img{
+	width:1.5em;
+}
+
+/* winkelmandje */
 .subscrmenubar button:nth-of-type(2){
 	display:flex;
 	flex-direction: row;
-	align-items:flex-start;
+	align-items: center;
+	
 	border:none;
-	padding:0.8em 1em 0em 1em;
+	padding:0.3em 1em;
 	font-family: var(--label-font);
 	font-size:1em;
 	font-weight:200;
 	color:#7a7a7a;
+	background: var(--winkelmandjebg);
 
 }
 
@@ -717,21 +883,91 @@ footer p{
 	width:8em;
 }
 
+.subscrmenubar a:nth-of-type(1) img{
+	background: var(--bg-berlinerlogo);
+	padding:0.2em;
+}
 
+/* nav styling */
+.subscrUitklapMenu {
+  position: fixed;
+  top: 3em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-background);
+  z-index: 9999;
+  overflow: auto;
+
+  /* default: closed */
+  max-height: 0;
+  transition: max-height 0.3s ease;
+  pointer-events: none; /* don’t block clicks when closed */
+}
+
+.subscrUitklapMenu.open {
+  max-height: calc(100vh - 3em);
+  pointer-events: auto;
+}
+
+/* zorgt voor geen scroll */
+body.menu-open{
+	overflow:hidden;
+	height:100vh;
+}
+
+/* reset UL inside */
+.subscriptions nav ul {
+  position: static;
+  background: transparent;
+  padding-left: 1em;
+}
+
+
+.subscriptions nav ul li{
+	border:none;
+	padding-top:0.3em;
+	padding-bottom:0.3em;
+	border-bottom:solid 1px #F5F5F5;
+}
+
+.subscriptions nav ul li a{
+	font-family: var(--label-font);
+	font-size:0.7em;
+	color: var(--nav-text);
+}
+
+.subscriptions header select{
+	border:none;
+	font-size: 1em;
+	font-weight: 200;
+}
+
+.subscrUitklapMenu > ul{
+	font-weight: 200;
+	text-transform: none;
+	margin-left:1em;
+}
+
+.subscrUitklapMenu > ul li{
+	padding-top:2em;
+}
+
+.subscrUitklapMenu ul a{
+	color:var(--nav-text);
+	font-family: var(--label-font);
+}
 
 
 /**************/
 /*main styling*/
 
-
-
-
 .subscriptions main section:nth-of-type(1) {
 	display:flex;
 	flex-direction: column;
-	align-items:flex-start;
 	gap:1em;
-	padding:2em 2em 1em 2em;
+	padding:3em 1em 1em 1em;
+
 }
 
 .subscriptions h2{
@@ -739,30 +975,50 @@ footer p{
 	margin-right:auto;
 	font-size:2em;
 	font-weight:570;
-	color:#232323;
+	color:var(--subtext);
+	padding-bottom:0.5em;
 }
 
 
-.subscriptions main section:nth-of-type(1) p{
+.subscriptions main section:nth-of-type(1) div:nth-of-type(1) p{
 	font-family: var(--label-font);
 	font-weight:200;
-	color:#232323;
+	color:var(--subtext);
 	text-align:center;
+	padding-bottom:1em;
 }
 
-.subscriptions select{
+/* vorgmeving dropdown relevance */
+.subscriptions main select{
 	width:100%;
 	border-radius:0%;
 	border-color:#00000040;
-	padding:1em;
+	padding:0.5em;
+	margin-bottom:1em;
 }
 
+
+.subscriptions main section:nth-of-type(1) div:nth-of-type(2) label{
+	display:none
+}
+
+/* verbergt There are 7 products text */
+.desktop-text{
+	 display: none; 
+}
+
+/* vormgeving Showing 1-7 of 7 item(s) text */
+.mobile-text{
+	font-family: var(--label-font);
+	font-weight: 200;
+    color: #7a7a7a;
+}
 
 .subscriptions main section:nth-of-type(1) p:nth-of-type(2){
 	font-family: var(--label-font);
 	font-size:1.1em;
 	font-weight:200;
-	color:#7a7a7a;
+	color:var(--subtext2);
 }
 
 /*positionering imgages*/
@@ -773,6 +1029,12 @@ footer p{
 	align-items:center;
 	gap:2em;
 	padding-bottom:2em;
+}
+
+.subscriptions main section:nth-of-type(2) ul a{
+	display:flex;
+	flex-direction: column;
+	
 }
 
 .subscriptions main section:nth-of-type(2) ul img{
@@ -786,25 +1048,25 @@ footer p{
 	flex-direction:column;
 	gap:0.5em;
 	align-items: center;
-	background-color:white;
+	background-color:var(--vlakken);
 	padding-top:1em;
 	padding-bottom:1em;
 	font-family:var(--label-font);
 	font-weight:200;
-	color:#7a7a7a;
+	color:var(--text-mags);
 }
 
 /*prijzen*/
 .subscriptions main section:nth-of-type(2) ul p span{
 	font-weight:570;
-	color:black;
+	color:var(--prijzen);
 }
 
 .subscriptions main section > p{
 	font-family: var(--label-font);
 	font-size:1em;
 	font-weight:200;
-	color:#7a7a7a;
+	color:var(--subtext2);
 	padding-bottom:2em;
 	padding-left:2em;
 }
@@ -816,150 +1078,201 @@ footer p{
 	margin-bottom:0.7em;
 	font-family: var(--label-font);
 	font-size:1.1em;
-	color:#7a7a7a;
+	color:var(--backtotop);
+}
+  
+footer .dropdown {
+	display: block;
+	width: 100%;
+	text-align: left;
+	font-family: var(--label-font, sans-serif);
+	font-size: 0.9em;
+	font-weight:600;
+	text-transform: uppercase;
+
+	padding: 1em 1em;
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: var(--footerbtn);
+  }
+  
+  /* standaard UL dicht en general styling lists*/
+footer section ul {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease;
+	/* tot hier chatgpt */
+
+	padding-left: 1em;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	text-align: start;
+	background-color:var(--footerbgli);
+  }
+  
+  /* open state  chatgpt*/
+footer section ul.open {
+	max-height: 500px; /* genoeg ruimte om alles te tonen */
+  }
+  
+  /* list items */
+footer section ul li {
+	border-bottom: 1px solid #f5f5f5;
+	padding: 1em 0;
+  }
+  
+  /* styling links */
+footer section ul li a,
+footer section ul li p {
+	font-family: var(--label-font, sans-serif);
+	font-size: 0.8em;
+	font-weight:400;
+	text-decoration: none;
+	border:none;
+  }
+
+footer section svg{
+	position: relative;
+    left: 13em;
+    bottom: 2em;
 }
 
+
+
+/* background white */
 .subscriptions footer{
-	background-color:white;
+	background-color:var(--footerbg);
 	margin:0;
 	gap:0;
 	padding-top:4em;
 }
 
-.subscriptions footer > a{
-	font-family: var(--label-font);
-	font-weight:200;
-	text-align: start;
-	padding-left:1em;
- 	color:#24b9d7;
-}
 
-.subscriptions footer details ul{
-	display: flex;
-	flex-direction: column;
-	text-align: start;
-	background-color:#f6f6f6;
-	
-}
-
-.subscriptions footer details ul a{
-	font-family: var(--label-font);
- 	font-weight:400;
-	 border-right:none;
-	 color:#232323;
-}
-
-
-
-.subscriptions footer details ul li{
-	border-right:none;
-	border-bottom: solid 2px white;
-	padding:1em;
-}
-
-.subscriptions footer summary{
-	display:flex;
-	justify-content: space-between;
-	gap:0;
-	padding: 1em;
-	border-bottom:solid 2px #F5F5F5;
-	font-family: var(--label-font);
-	text-transform: uppercase;
-	font-weight:550;
-
-}
-
-.subscriptions footer .storeinfo ul{
-	background-color:white;
-	padding:1em;
-}
-
+/* positionering store info list */
 .subscriptions footer .storeinfo ul li{
-	padding: 0em;
+	text-align: start;
+	padding-left: 0.5em;
+	padding-bottom: 0.2em;
+	background-color:none;
 }
+
+/* store info ruimte onder list */
+.subscriptions footer .storeinfo ul {
+	padding-bottom:1em;
+}
+
 
 .subscriptions footer .storeinfo ul li p{
     font-family: var(--label-font);
 	font-weight:200;
 	font-size:0.9em;
-	
+}
 
+/* onderste text trademark*/
+.subscriptions footer > a{
+	font-family: var(--label-font);
+	font-weight:200;
+	text-align: start;
+	padding-left:1em;
+ 	color:var(--trademark);
 }
 
 /*src chatgpt*/
 summary::after {
 	content: "▾";       /* pijltje omlaag */
 	font-size: 0.8em;
-  }
+}
   
-  details[open] summary::after {
-	  width:1em;
+details[open] summary::after {
+	width:1em;
 	content: "▴";       /* pijltje omhoog als open */
-  }
+}
 
 
-@media (max-width:767px) {
-	.uitklapmenu {
-		bottom:0;
+@media (min-width: 579px){
+.subscrmenubar{
+	margin-left:auto;
+
+}
+
+/* positionering subscriptions gedeelte */
+.subscriptions main section:nth-of-type(1) {
+	margin-left:3em;
+	margin-right:3em;
+}
+
+/* ruimte rechts van menubar */
+.subscriptions main section:nth-of-type(2) ul {
+	display: grid;
+	grid-template-columns: repeat(2, 15em);
+	grid-template-rows: repeat(2, 1fr);
+	grid-column-gap: 2em;
+	grid-row-gap: 1.5em;
 	}
 }
 
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
  
-	body{
-		margin-left:4em;
+	/* berlinermag */
+	main {
+		margin-left:6em;
 		margin-right:1em;
-
 	}
 
-    .uitklapmenu{
+	/* responsive menu src dlo hamurgermenu opdracht*/
+	.uitklapmenu{
 		translate:unset;
 		padding:0;
 		background:none;
 		top:8em;
-	  }
-	  
-	  .menu {
-		/* JOUW CODE HIER - stap 7 */
-		display:none;
-	  }
-	  
-	   nav  ul {
-		/* JOUW CODE HIER - stap 9 */
+		bottom:unset;
+	}
+		
 
+	.menu {		
+		display:none;
+	}
+
+	/* schakelt grid uit */
+	nav  ul {
+		margin-left:2em;
 		display:flex;
 		flex-direction: row;
-		background-color:white;
-		margin-left:2em;
+		background-color:var(--color-background);
+	}
 
-		 /* hiermee zijn de andere grid-properties niet meer relevant */
-	  }
-
-	  nav ul li{
-		  border-top:none;
-		border-right: solid 2px #9b9b9b;;
+	/* eigen styling */
+	nav ul li{
+		border-top:none;
+		border-right: solid 2px #9b9b9b;
 		padding: 0em 0.3em 0em 0.3em;
+	}
 
-	  }
+	nav ul li:last-child {
+		border-right:none;
+	}
 
-	  .menubar{
+	/* kleine border bij de nav */
+	nav ul { 
+		border-bottom:solid 1px #9b9b9b;
+	}
+
+	.menubar{
 		display: flex;
 		justify-content: flex-start;
 		height:10em;
-	
-	  }
-
-	  .menubar a{
-		width:20em;
 	}
 
+	.menubar a {
+		width:20em;
+		padding-left:4em;
+	}
 
-
-	
-	
-	
-	.submenu-toggle{
+	/* submenu styling */
+	.submenu-toggle {  
 		display:flex;
 		position:fixed;
 		padding:1em;
@@ -975,32 +1288,25 @@ summary::after {
 		width:30%;
 		height:100%;
 		position: fixed;
-		margin-top:2em;
+		margin-top:2.7em;
+
 		top:0;
 		transition: width 0.3s ease; /* animatie op breedte */
 		overflow: hidden;          
-
 	}
 
 	.submenu.collapsed {
-  		width: 50px; /* bijvoorbeeld alleen iconen zichtbaar */
+		width: 60px; /* bijvoorbeeld alleen iconen zichtbaar */
 	}
 
 	.submenu.collapsed ul:first-of-type {
 		display: none;
-	  }
+	}
 
-	  .submenu.collapsed ul:nth-of-type(2) {
+	.submenu.collapsed ul:nth-of-type(2) {
 		margin-top:20em;
-	  }
-	  
-
-
-
-
-
-
-
+	}
+		
 	.submenu ul:nth-of-type(1) li{
 		margin-top:0.5em;
 	}
@@ -1022,43 +1328,65 @@ summary::after {
 	.submenu ul:nth-of-type(2) li a img{
 		width:1em;
 		height:1em;
-		margin:0.5em;
-		
+		margin:0.5em;	
+	}
+
+	.submenu ul:nth-of-type(2) li{
+		padding:0;
 	}
 
 	/*zoekknop*/
-	header form{
+	header form button:nth-of-type(1),
+	header form button:nth-of-type(2) {
 		position:fixed;
 		top:0;
 		left:0;
+		padding:1em;	
 	}
 
+    .pijltje{
+	position: fixed;
+        top: 0;
+        left: 0;
+		background-color:none;
+        padding: 1em;
+}
 
-	/*positionering mainarticle,getthemag,subscribe,popular*/
+	.zoekclose{
+		background-color:#f53515;
+	}
 
+	.zoekknop{
+		background-color:var(--zoekknop);
+	}
 	
-	.hoofdgrid{
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		grid-template-rows: repeat(3, 1fr);
-		grid-column-gap: 0px;
-		grid-row-gap: 20px;
+	.zoekknop svg{
+		fill:none;
+		stroke: white;
+		stroke-width:0.15em;
 	}
-			
-	.signupform { 
-		grid-area: 1 / 1 / 2 / 4; 
-	    margin-top:10em;
+
+	main .hoofdgrid .mainarticle a img {
+		margin-top:7em;
+	}
+
+	/* links en rechts knoppen wel weer zichtbaar zodat je kan scrollen en ook met de knoppen kan bewegen */
+	.carrousel div:nth-of-type(1) button{
+		display:block;
+		background:none;
+	}
+
+	/* zorgen dat er maar 3 op het carrousel staan */
+	.carrousel ul li{
+		width:31%;
+	}
+
+	.carrousel ul{
+		width:80%;
+		margin-left:auto;
+		margin-right:auto;
+	}
 		
-	}
-
-	.mainarticle { grid-area: 2 / 1 / 4 / 3; }
-
-	.getthemag { grid-area: 2 / 3 / 3 / 4; }
-
-	.popular{ grid-area: 3 / 3 / 4 / 4; }
-	
-
-
 	/*positionering in 2 columns src:https://cssgrid-generator.netlify.app/*/ 
 	.features ul,
 	.latest ul{
@@ -1067,20 +1395,394 @@ summary::after {
 		grid-template-rows: repeat(2, 1fr);
 		grid-column-gap: 15px;
 		grid-row-gap: 0px;
+	}
 
+	footer{
+		margin-left:6em;
+	}
+
+	/*****************/
+	/* subscriptions */
+
+	/* Make the subscriptions nav act like a normal bar on desktop */
+	.subscrUitklapMenu {
+		position: static;   /* not fixed */
+		top: auto;
+		bottom: auto;
+		left: auto;
+		right: auto;
+
+		max-height: none;   /* remove the clamp */
+		overflow: visible;
+		pointer-events: auto;
+		transition: none;   /* no sliding animation on desktop */
+	}
+
+	/* Ensure the 'open' class doesn't change desktop layout */
+	.subscrUitklapMenu.open {
+		max-height: none;
+	}
+	
+
+
+	.subscrmenubar {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		border-bottom: solid 2px #F5F5F5;  
+	}
+
+	/* en hamburger knop verbergen op desktop (chatgpt)*/
+	.subscrmenu {
+		display: none;
+	}
+
+	.subscriptions header{
+		padding-bottom: 0;
+	}
+
+	.subscriptions nav ul{
+		display: grid;
+		position: relative;
+		top:0;
+		grid-template-columns: repeat(4, 9em);
+		grid-template-rows: repeat(2, 2em);
+		bottom:8em;
+		font-size: 1em;
+		border:none;
+		padding:1em;
+		justify-content: flex-end;
+		background:none;
+		
 	}
 
 
+	.subscrmenubar a:nth-of-type(1){
+		position: absolute;
+		top:4.4em;
+		left:2em;
+	}
 
+	.subscriptions nav ul li a {
+		font-family: var(--label-font);
+		font-size:1em;
+		border:none;
+	}
+
+	.subscriptions nav ul li a:hover{
+		color:#24b9d7 ;
+	}
+
+	.subscriptions nav ul li{
+		border:none;
+	}
+
+	/* positionering en opmaak call us en language */
+	.subscrUitklapMenu ul{
+		display: flex;
+		flex-direction: row-reverse;
+		position:absolute;
+		top:0.5em;
+		left:3em;
+	}
+
+	.subscrUitklapMenu ul select{
+		margin-left:15em;
+	}
+
+	.subscrUitklapMenu > ul li{
+		padding:0;
+	}
+
+
+	.subscriptions main select{
+		width:40%;
+		margin:0;
+		padding:1em;
+	}
+
+	/* breder maken subscriptions text*/
+	.subscriptions main section:nth-of-type(1) {
+		padding-left:0;
+		padding-right:0;
+	}
+	/* achtergrond wit maken subscriptions text en align left*/
+	.subscriptions main section:nth-of-type(1) div:nth-of-type(1){
+		display: flex;
+		flex-direction: column;
+		background-color:var(--vlakken);
+		height:13em;
+		padding:1em;
+	}
+
+	.subscriptions main section:nth-of-type(1) div:nth-of-type(2){
+		display: flex;
+		flex-direction: row-reverse;	
+	}
+
+	.subscriptions main section:nth-of-type(1) div:nth-of-type(2) label{
+		display: flex;
+		align-items: center;
+		font-family: var(--label-font);
+		padding-right:1em;
+		color:var(--subtext2);
+		font-weight:200;
+	}
+
+	/*align text onder subscriptions */
+	.subscriptions main section:nth-of-type(1) p {
+		font-family: var(--label-font);
+		text-align: left;
+		margin-right:auto;
+		font-weight: 400;
+		color: #7a7a7a;
+	}
+
+	/* ruimte tussen menubar en rechts */
+	.subscrmenubar button:nth-of-type(2) {
+		margin-right:3em;
+	}
+
+	/* verandert de text Showing 1-7 of 7 item(s) naar There are 7 products*/
+	.mobile-text { display: none; }
+	.desktop-text { display: block;}
+
+
+	.subscriptions main{
+		margin:0;
+	}
+
+
+	/* grotere gap tussen columns van de magazines*/
+	.subscriptions main section:nth-of-type(2) ul {
+		grid-column-gap: 6em;
+	}
+
+	.backToTop {
+		display: none;
+	}
+
+	/* footer moet worden uitgeklapt */
+
+	footer div{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+
+	footer section ul {
+		display:flex;
+		max-height: none;   /* chatgpt geen beperking meer*/
+		overflow: visible;  /* chatgpt normale lijst */
+		transition: none;   /* chatgpt geen animatie nodig */
+		background:none;
+	  }
+
+	.subscriptions footer section{
+		margin-left:2em;
+		margin-right:2em;
+	}
+
+	/* styling list items */
+	footer section ul li {
+		border:none;
+		padding:0;
+		margin:0.1em;
+	}
+    
+	footer section ul li a{
+		font-size:1em;
+		font-weight:200;
+		color:var(--nav-text);
+	}
+
+	footer section ul li a:hover{
+		color:#24b9d7;
+	}
+
+	/* space tussen informations en your account */
+	footer section:nth-of-type(2){
+		margin-left:auto;
+	}
+
+	/* geen pijltjes op groter scherm */
+	 footer section svg{
+		 display:none;
+	 }
+	
+	/* trademark in het midden */
+	.subscriptions footer > a {
+		text-align:center;
+	  }
 
 }
 
+@media (min-width:992px){
 
+	.subscrmenubar a:nth-of-type(1) {
+		top:2.6em;
+	}
 
-@media (min-width: 768px){
+	.subscriptions nav ul {
+        display: flex;
+		justify-content: center;
+		gap:1em;
+	}
+
+	.subscriptions main section:nth-of-type(2) ul{
+		display: grid;
+		grid-template-columns: repeat(2, 15em);
+		grid-template-rows: repeat(2, 1fr);
+		grid-column-gap: 10em;
+		grid-row-gap: 1.5em;
+	}
+
+	.subscrUitklapMenu ul select{
+		margin-left:22em;
+	}
+
+}
+
+@media (min-width: 1024px){
+
+/* berlinermag */
+
+	/*chatgpt*/
+	.signupform .text {
+		display: contents;
+	}
+	
+	/* met behulp van https://cssgrid-generator.netlify.app/*/
+	.hoofdgrid {
+		display: grid;
+		grid-template-columns: (20em, 10em);
+		grid-template-rows: (10em, 20em, 10em);
+		grid-column-gap: 0px;
+		grid-row-gap: 70px;
+	}
+					
+	.mainarticle { 
+		grid-area: 2 / 1 / 4 / 3; 
+	}
+
+	main .hoofdgrid .mainarticle a img {
+		margin-top:0;
+	}
+		
+	.getthemag { 
+		grid-area: 2 / 3 / 3 / 4;
+		height:10em;
+		margin-top:0; 
+		margin-bottom:0; 
+	}
+		
+	.popular{ 
+		grid-area: 3 / 3 / 4 / 4; 
+	}
+			 
+	.signupform{
+		grid-area: 1 / 1 / 2 / 4; 
+		margin-top:10em;
+	}
+
+	/* chatgpt */
+	.signupform {
+		display: grid;
+		grid-template-columns: 170px 350px 1fr; /* 3 kolommen */
+		grid-template-rows: 50px 50px;      /* 2 rijen */
+		gap: 1rem; /* optioneel, ruimte tussen items */
+		align-items: start; /* of center als je wilt */
+		margin-top: 16em;
+	  }
+	  
+	  /* chatgpt img in kolom 1, rij 1-3 (dus beide rijen) */
+	  .signupform img {
+		  position:relative;
+		  top:-2.5em;
+		grid-column: 1;
+		grid-row: 1 / span 2;
+		width:10em;
+		
+	  }
+	  
+	  /* chatgpt eerste p in .text → kolom 2, beide rijen */
+	  .signupform  p:first-of-type {
+		grid-column: 2;
+		grid-row: 1 / span 2;
+	  }
+
+	  .signupform p{
+		  text-align:start;
+	  }
+
+	  /* meer ruimte voor de sign up for our text */
+	  .signupform .text p:nth-of-type(1){
+		  margin:0;
+	  }
+	  
+
+	  /*eigen styling*/
+	  .signup{
+		font-size:2.5em; 
+	  }
+
+	  .forour{
+		font-size:2em;
+		
+	  }
+
+	  .newsletter{
+		font-size:3em;
+	  }
+	  
+	  .berlinevents{
+		  font-size:1.7em;
+		  display: flex;
+		  justify-content: flex-start;
+	  }
+	  
+	  /* chatgpt tweede p in .text → kolom 3, rij 1 */
+	  .signupform  p.berlinevents {
+		grid-column: 3;
+		grid-row: 1;
+	  }
+	  
+	  /* chatgpt form → kolom 3, rij 2 */
+	  .signupform form {
+		grid-column: 3;
+		grid-row: 2;
+
+		/*eigen code*/
+		display: flex;
+    	flex-direction: row;
+    	margin-top: 0;
+	  }
+
+	/*resizing input field*/
+	input[type=email] {
+   	 margin-right: 0;
+		width:100%;
+		text-align:start;
+	}
+
+	.signupform form button{
+		margin-right:1em;
+	}
+	
+	.mainarticletext {
+		width:30em;
+	}
+
+	.mainarticletext h2{
+		font-size:2.5em;
+	}
+
+	.mainarticle .mainarticletext p:nth-of-type(2) {
+		font-size:1em;
+	}
 
 	/*positionering in 3 columns */ 
-
 	.features ul,
 	.latest ul{
 		display: grid;
@@ -1091,5 +1793,104 @@ summary::after {
 
 	}
 
+	/* 5 passen precies dus ik laat ze naast elkaar zonder door klik knoppen */
+	.carrousel ul{
+		width:100%;
+		display: flex;
+		justify-content:space-between;
+		margin:0;
+		overflow-x:hidden;
+	}
+
+	.carrousel p{
+		font-size:1.1em;
+	}
+
+	.carrousel ul li{
+		width:12em;
+	}
+
+	/* disable alle previous en next buttons van het carrousel omdat het scherm ze allemaal laat zien*/
+	.carrousel div:nth-of-type(1) button{
+		display:none;
+	}
+
+	.carrousel div:nth-of-type(2) button{
+		display:none;
+	}
+
+
+	/* subscriptions pagina styling*/
+
+	.subscriptions main section:nth-of-type(1){
+		margin-left:10em;
+		margin-right:10em;
+	}
+
+	/* positionering berlinerlogo */
+	.subscrmenubar a:nth-of-type(1) {
+		left: 9em;
+	}
+
+
+
+	/* positionering talen select */
+	.subscriptions nav ul div li:nth-of-type(1){
+		right:18em;
+	}
+
+	/* positionering mandje en account */
+
+	.subscrmenubar button:nth-of-type(2){
+		margin-right: 10em;
+	}
+
+	.subscriptions nav ul{
+		padding-left:10em;
+	}
+
+	/* positionering call us */
+	.subscrUitklapMenu > ul a {
+		margin-left:6em;
+	}
+
 
 }
+
+@media (min-width: 1200px){
+
+	nav ul{
+		padding-left: 3em;
+	}
+
+	.menubar a {
+		padding-left: 6em;
+		width: 35em;
+	}
+	
+	main{
+		margin-left:10em;
+		margin-right:8em;
+	}
+	
+
+	.subscriptions main section:nth-of-type(2) ul{
+		display: grid;
+		grid-template-columns: repeat(3, 15em);
+		grid-template-rows: repeat(2, 1fr);
+		grid-column-gap: 10em;
+		grid-row-gap: 1.5em;
+	}
+
+	.subscriptions nav ul{
+		padding-right:12em;
+	
+	}
+
+	.subscrUitklapMenu ul select{
+		margin-left:35em;
+	}
+
+}
+
+  
