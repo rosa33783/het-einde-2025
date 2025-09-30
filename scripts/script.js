@@ -1,16 +1,15 @@
+/*code van de menuopdracht*/
 
-/*code van opdracht  */
-/******************************/
 /* menu openen de MENU button */
-/******************************/
-const menuOpenButton = document.querySelector(".menu");
+
+const menuOpenButton = document.querySelector(".menubar button:nth-of-type(1)");
 const deNav = document.querySelector(".uitklapmenu");
 const menuSluitButton = document.querySelector(".menubar button:nth-of-type(2)");
 
-
-
-menuOpenButton.onclick = openMenu;
-menuSluitButton.onclick = sluitMenu;
+if (menuOpenButton && menuSluitButton && deNav) {
+  menuOpenButton.onclick = openMenu;
+  menuSluitButton.onclick = sluitMenu;
+}
 
 function openMenu() {
   deNav.classList.add("toonMenu");          // menu openen
@@ -25,10 +24,12 @@ function sluitMenu() {
 }
 
 
+// submenu open en dicht src chatgpt
 document.addEventListener('DOMContentLoaded', () => {
   const toggleButton = document.querySelector('.submenu-toggle');
   const submenu = document.querySelector('.submenu');
 
+  if (!toggleButton || !submenu) return;
   // standaard dicht zetten
   submenu.classList.add('collapsed');
 
@@ -39,65 +40,83 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-/*carrousel*/
-const prevButton = document.querySelector(".carrousel button:nth-of-type(1)");
-const nextButton = document.querySelector(".carrousel button:nth-of-type(2)");
+// carrouselcode src chatgt
+const prevButtons = document.querySelectorAll(".carrousel button:nth-of-type(1)");
+const nextButtons = document.querySelectorAll(".carrousel button:nth-of-type(2)");
 const deUl = document.querySelector(".carrousel ul");
-
 
 function goToNextPhoto() {
 	const deULWidth = deUl.offsetWidth;
-	const deULWidthHalf = deULWidth * 1;
-	deUl.scrollLeft = deUl.scrollLeft + deULWidthHalf;
+	deUl.scrollLeft = deUl.scrollLeft + deULWidth;
 }
-
-
-nextButton.onclick = goToNextPhoto;
-
 
 function goToPrevPhoto() {
 	const deULWidth = deUl.offsetWidth;
-	const deULWidthHalf = deULWidth * 1;
-	deUl.scrollLeft = deUl.scrollLeft - deULWidthHalf;
+	deUl.scrollLeft = deUl.scrollLeft - deULWidth;
 }
 
+nextButtons.forEach(btn => {
+	btn.addEventListener("click", goToNextPhoto);
+});
 
-prevButton.onclick = goToPrevPhoto;
-
-
-
-
-
-
-/*zoekbalk */
-
-// selecteer elementen
-const zoekknop = document.querySelector(".zoekknop");
-const input = document.querySelector(".search-input");
-
-// toggle bij klik
-zoekknop.addEventListener("click", () => {
-  input.classList.toggle("hidden");
-  
-  // optioneel: focus meteen op het input-veld als het zichtbaar wordt
-  if (!input.classList.contains("hidden")) {
-    input.focus();
-  }
+prevButtons.forEach(btn => {
+	btn.addEventListener("click", goToPrevPhoto);
 });
 
 
-/*subscriptions hamburgermenu */
-const menuButton = document.querySelector(".subscrmenu");
-const menu = document.querySelector(".subscrUitklapMenu");
 
-menuButton.onclick = toggleMenu;
 
-function toggleMenu() {
-  if (menu.classList.contains("open")) {
-    sluitMenu();
-  } else {
-    openMenu();
-  }
+
+/*zoekbalk src chatgpt */
+const form = document.querySelector(".menubar form");
+const zoekOpenBtn = document.querySelector(".zoekknop");
+const zoekCloseBtn = document.querySelector(".zoekclose");
+const input = document.querySelector(".search-input");
+const pijltje = document.querySelector(".pijltje");
+
+function openSearch() {
+  input.classList.remove("hidden");
+  pijltje?.classList.remove("hidden");
+  zoekOpenBtn.classList.add("hidden");
+  zoekCloseBtn.classList.remove("hidden");
+  input.focus();
 }
 
+function closeSearch() {
+  input.classList.add("hidden");
+  pijltje?.classList.add("hidden");
+  zoekCloseBtn.classList.add("hidden");
+  zoekOpenBtn.classList.remove("hidden");
+}
+
+if (zoekOpenBtn && zoekCloseBtn) {   
+  zoekOpenBtn.addEventListener("click", openSearch);
+  zoekCloseBtn.addEventListener("click", closeSearch);
+}      
+
+
+//menu subscriptions src chatgpt
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.querySelector('.subscrmenu');
+  const menu = document.querySelector('.subscrUitklapMenu');
+  if (!btn || !menu) return;
+
+  btn.addEventListener('click', () => {
+    const isOpening = !menu.classList.contains('open');
+    menu.classList.toggle('open', isOpening);
+    document.body.classList.toggle('menu-open', isOpening);
+  });
+});
+
+//uitklap footer
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("footer .dropdown").forEach((btn) => {
+    // het UL moet het volgende sibling zijn dat een UL is
+    const ul = btn.parentElement.querySelector("ul");
+    if (!ul) return;
+
+    btn.addEventListener("click", (e) => {
+      ul.classList.toggle("open");
+    });
+  });
+});
