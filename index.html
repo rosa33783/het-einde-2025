@@ -16,43 +16,77 @@
 
 <body>
 	<header>
-		<h1></h1>
+
+	<h1 class="visually-hidden">welcome to Berliner mag</h1>
+
 		<section class="menubar">
-			<button class="menu"><img src="images/menu.png" alt=""></button>
-			<!--<a href="https://www.flaticon.com/free-icons/hamburger" title="hamburger icons">
-				Hamburger icons created by See Icons - Flaticon</a>-->
-			<button><img src="images/close.png" alt=""></button>
+
+			<button class="menu" aria-label="Open navigation menu">
+				<!-- door sommige items als svgs in de code te zetten kan ik met de mediaquery darkmode de logos veranderen -->
+				<!-- src is https://www.svgrepo.com/-->
+				<svg fill="#000000" width="24px" height="24px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1920 1411.412v225.882H0v-225.882h1920Zm0-564.706v225.882H0V846.706h1920ZM1920 282v225.882H0V282h1920Z" fill-rule="evenodd"/>
+				</svg>
+
+			</button>
+			
+
+			<button aria-label="close navigation menu">
+				<!-- src is https://www.svgrepo.com/-->
+				<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z" fill="#0F0F0F"/>
+				</svg>
+			</button>
+
 			<form>
-				<button type="button" class="zoekknop">
-					<img src="images/search.png" alt="">
+
+				<button type="button" class="zoekknop" aria-label="search button">
+
+					<!-- src is https://www.svgrepo.com/-->
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+				 		<path d="M21 21l-4.35-4.35m2.85-5.65a8 8 0 11-16 0 8 8 0 0116 0z"/>
+					</svg>
+
 				</button>
 
-				<button type="button" class="zoekclose hidden">
-					<img src="images/cross-svgrepo-com.svg" alt="">
+				<button type="button" class="zoekclose hidden" aria-label="close search button">
+
+					<!-- src is https://www.svgrepo.com/-->
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z" fill="#0F0F0F"/>
+					</svg>
+
 				</button>
 
-				<!--<a href="https://www.flaticon.com/free-icons/search" 
-							title="search icons">Search icons created by Fingerprint Designs - Flaticon</a>-->
-				<div class="input-wrapperHidden">
-				<input type="text" class="search-input hidden" placeholder="Search.." title="Type in a category">
-				<button class="pijltje"><img src="images/right-arrow.png" alt=""></button>
-				<!--<div> Icons made by <a href="https://www.flaticon.com/authors/prosymbols-premium" 
+				
+				<div>
+
+					<input type="text" class="search-input hidden" placeholder="Search.." title="Type in a category">
+					<button class="pijltje"><img src="images/right-arrow.png" alt="go search icoon"></button>
+						<!--<div> Icons made by <a href="https://www.flaticon.com/authors/prosymbols-premium" 
 						title="Prosymbols Premium"> Prosymbols Premium </a> 
 						from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>-->
 				</div>
+
 			</form>
-			<a href="#"><img src="images/TheBerliner_Logo_1000px_RGB.png" alt=""></a>
+
+			<a href="#"><img src="images/TheBerliner_Logo_1000px_RGB.svg" alt="Berliner magazine logo"></a>
+
 		</section>
 
 		<section class="uitklapmenu">
+
 			<nav>
+
 				<ul>
 					<li>
-						<a href="#">Berlin</a>
+						<a href="#">Berlin</a>  
 					</li>
+
 					<li>
 						<a href="#">art</a>
 					</li>
+
 					<li>
 						<a href="#">music & clubs</a>
 					</li>
@@ -81,7 +115,14 @@
 			</nav>
 
 			<section class="submenu">
-				<button class="submenu-toggle"><img img src="images/cross-svgrepo-com.svg" alt=""></button>
+				<button class="submenu-toggle" aria-label="open submenu containing your favorites, webshop and socials">
+					
+					<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z" fill="#0F0F0F"/>
+					</svg>
+
+				</button>
+
 				<ul>
 					<li>
 						<a href="#">Your favorites</a>
@@ -90,27 +131,44 @@
 						<a href="#">Webshop</a>
 					</li>
 				</ul>
+
 				<ul>
 					<li>
-						<a><img img src="images/instagram-svgrepo-com.svg" alt=""></a>
+						<a>
+							<img src="images/instagram-svgrepo-com.svg" alt="instagram logo">
+						</a>
 					</li>
+
 					<li>
-						<a><img img src="images/facebook-svgrepo-com.svg" alt=""></a>
+						<a>
+							<img src="images/facebook-svgrepo-com.svg " alt="facebook logo">
+						</a>
 					</li>
+
 					<li>
-						<a><img img src="images/twitter-154-svgrepo-com.svg" alt=""></a>
+						<a>
+						   <img src="images/twitter-154-svgrepo-com.svg" alt="twitter logo">
+						</a>
 					</li>
+
 					<li>
-						<a><img img src="images/youtube-168-svgrepo-com.svg" alt=""></a>
+						<a>
+							<img src="images/youtube-168-svgrepo-com.svg" alt="youtube logo">
+						</a>
 					</li>
 				</ul>
+
 			</section>
+
 		</section>
+
 	</header>
 
 	<main>
-		<section class="hoofdgrid">
+		<div class="hoofdgrid">
+
 			<section class="mainarticle">
+
 				<a href="#">
 					<img src="images/Christina-Rivera-Garza_.jpg" alt=" a picture of Christina Rivera Garza">
 
@@ -131,12 +189,15 @@
 					</div>
 				</a>
 
-
 			</section>
 
+
 			<section class="popular">
+
 				<h2>popular</h2>
+
 				<ul>
+
 					<li>
 						<a href="#">What to do in September: The best events</a>
 					</li>
@@ -157,45 +218,69 @@
 						<a href="#">BVG installs new signs as Anton-Wilhelm-Amo-Straße replaces controversial
 							"M-Strasse"</a>
 					</li>
+
 				</ul>
 
 			</section>
 
 			<section class="getthemag">
+
 				<h2>get the mag</h2>
-				<a href="#"><img src="images/getthemag.png" alt=""></a>
+
+				<a href="#"><img src="images/getthemag.png" alt="linked image to page where you can buy the magazine"></a>
+
 			</section>
 
 			<section class="signupform">
-				<section class="text">
+
+				<div class="text">
+
 					<p>
 						<span class="signup">sign up </span>
 						<span class="forour">for our</span>
 						<span class="newsletter">newsletter</span>
 					</p>
+
 					<p class="berlinevents">
 						Berlin events, freebees, food & news
 					</p>
-				</section>
+
+				</div>
+
 				<img src="images/phone-newsletter-the-berliner.png" alt="">
+
 				<form>
+
 					<input type="email" name="E-mail address" placeholder="E-mail address">
 					<button>subscribe</button>
-				</form>
-			</section>
-		</section>
 
+				</form>
+
+				</section>
+
+			</div>
 
 
 		<section class="latest">
+
 			<h2>latest</h2>
+
 			<ul>
+
 				<li>
+
 					<a href="#">
+						
+						<!-- div voor positionering van het label binnen de image-->
 						<div class="containerimg">
-							<img src="images/movies.png" alt="">
+
+							<img src="images/movies.png" 
+							alt="nostalgic artsy looking picture of a scene from a movie. 
+							Two girls are in a sunny forest. The picture is grainy">
+
 							<p class="category">Film</p>
-						</div>
+							
+						</div>
 
 						<h3>
 							September 2025: The month’s best film events
@@ -210,10 +295,15 @@
 				</li>
 
 				<li>
+
 					<a href="#">
+
 						<div class="containerimg">
-							<img src="images/smoking.jpg" alt="">
+
+							<img src="images/smoking.jpg" alt="picture of two full cigarette packets">
+
 							<p class="category">Monday, September 1</p>
+
 						</div>
 
 						<h3>
@@ -226,13 +316,19 @@
 						</p>
 
 					</a>
+
 				</li>
 
 				<li>
+
 					<a href="#">
+
 						<div class="containerimg">
-							<img src="images/traffic.jpg" alt="">
+
+							<img src="images/traffic.jpg" alt="picture of a blue truck crashed in a tunnel">
+
 							<p class="category">Tuesday, September 2</p>
+
 						</div>
 
 
@@ -247,14 +343,20 @@
 
 
 					</a>
+
 				</li>
 
 				<li>
+
 					<a href="#">
-						<section class="containerimg">
-							<img src="images/MarinaMonaco.jpg" alt="">
+
+						<div class="containerimg">
+
+							<img src="images/MarinaMonaco.jpg" alt="black and white picture of a woman in a club with graffiti on the walls">
+
 							<p class="category">Photography</p>
-						</section>
+
+						</div>
 
 
 						<h3>
@@ -267,13 +369,19 @@
 						</p>
 
 					</a>
+
 				</li>
 
 				<li>
+
 					<a href="#">
+
 						<div class="containerimg">
-							<img src="images/Freydanck.jpg" alt="">
+
+							<img src="images/Freydanck.jpg" alt="realistic drawing of berlins oldest museum">
+
 							<p class="category">Museums</p>
+
 						</div>
 
 						<h3>
@@ -285,23 +393,35 @@
 						</p>
 
 					</a>
+
 				</li>
+
 			</ul>
 
 			<div class="centercontainer">
+
 				<button class="loadmore">load more</button>
+
 			</div>
 
 		</section>
 
 		<section class="features">
+
 			<h2>features</h2>
+
 			<ul>
+
 				<li>
+
 					<a href="#">
+
 						<div class="containerimg">
-							<img src="images/life.png" alt="">
+
+							<img src="images/life.png" alt="image of woman doing beauty treatment in front of a mirror">
+
 							<p class="category">Berlin</p>
+
 						</div>
 
 
@@ -315,13 +435,19 @@
 						</p>
 
 					</a>
+
 				</li>
 
 				<li>
+
 					<a href="#">
+
 						<div class="containerimg">
-							<img src="images/zoo.jpg" alt="">
+
+							<img src="images/zoo.jpg" alt="woman in panther print fur jacket looking at two leopards in a cage in a zoo">
+
 							<p class="category">zoo</p>
+
 						</div>
 
 						<h3>
@@ -334,13 +460,19 @@
 						</p>
 
 					</a>
+
 				</li>
 
 				<li>
+
 					<a href="#">
+
 						<div class="containerimg">
-							<img src="images/water.png" alt="">
+
+							<img src="images/water.png" alt="picture of a canal">
+
 							<p class="category">Berlin</p>
+
 						</div>
 
 						<h3>
@@ -353,42 +485,60 @@
 						</p>
 
 					</a>
+
 				</li>
+
 			</ul>
 
-			<section class="centercontainer">
+			<div class="centercontainer">
+
 				<button class="loadmore">load more</button>
-			</section>
+
+			</div>
 
 		</section>
 
 		<section class="carrousel">
+
 			<h2>Giveaways</h2>
+
 			<ul>
+
 				<li>
+
 					<a href="#">
-						<img src="images/carrousel1.jpg" alt="">
+
+						<img src="images/carrousel1.jpg" alt="picture of man walking in front of a building with a yellow entrance">
 
 						<p>
 							2x2 tickets for the anniversery party "una Festa Italiana -
 							Berlino Magazine & True Italian" at Urban Spree on 6/9
 						</p>
+
 					</a>
+
 				</li>
 
 				<li>
+
 					<a href="#">
-						<img src="images/carrousel2.jpg" alt="">
+
+						<img src="images/croissant.jpeg" alt="picture of chicken with rice">
+
 						<p>
 							5x2 tickets for the movie "Cabaret (US 1972)" at Freiluftkino
 							Kreuzberg on 7/9
 						</p>
+
 					</a>
+
 				</li>
 
 				<li>
+
 					<a href="#">
-						<img src="images/carrousel3.jpg" alt="">
+
+						<img src="images/carrousel3.jpg" alt="shot from the movie brokeback mountain with two cowboys chilling on a hill next to a pinetree forest">
 
 						<p>
 							5x2 tickets for the movie "Brokeback Mountain - 20 Jahre"
@@ -398,32 +548,65 @@
 				</li>
 
 				<li>
+
 					<a href="#">
-						<img src="images/carrousel4.jpg" alt="">
+
+						<img src="images/carrousel4.jpg" alt="shot from the movie where the wild things are with a little boy in the middle and two hairy monsters next to him">
 
 						<p>
 							2x2 tickets for the movie "Wo die wilden Kerle wohnen -
 							Where the wild things are" at Freiluftkino Insel on 7/9
 						</p>
+
 					</a>
+
 				</li>
 
 
 				<li>
+
 					<a href="#">
-						<img src="images/carrousel5.jpg" alt="">
+
+						<img src="images/carrousel5.jpg" alt="image from a cinema from the outside at night">
 
 						<p>
 							2x2 tickets for the movie "BEATING HEARTS" at Freiluftkino Insel on 22/8
 						</p>
+
 					</a>
+
 				</li>
+
 			</ul>
 
-			<section>
-				<button class="prev"></button>
-				<button class="next"></button>
-			</section>
+
+			<div>
+
+				<button aria-label= "arrow left button next to the carrousel">
+
+					<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M14.2893 5.70708C13.8988 5.31655 13.2657 5.31655 12.8751 5.70708L7.98768 10.5993C7.20729 11.3805 7.2076 12.6463 7.98837 13.427L12.8787 18.3174C13.2693 18.7079 13.9024 18.7079 14.293 18.3174C14.6835 17.9269 14.6835 17.2937 14.293 16.9032L10.1073 12.7175C9.71678 12.327 9.71678 11.6939 10.1073 11.3033L14.2893 7.12129C14.6799 6.73077 14.6799 6.0976 14.2893 5.70708Z" fill="#0F0F0F"/>
+					</svg>
+
+				</button>
+
+				<button aria-label="arrow right button next to the carrousel">
+
+					<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#0F0F0F"/>
+					</svg>
+
+				</button>
+
+			</div>
+			
+			<div>
+
+				<button class="prev" aria-label="round button previous page carrousel"></button>
+				<button class="next" aria-label="round button next page carrousel"></button>
+
+			</div>
+
 		</section>
 
 	</main>
@@ -435,7 +618,7 @@
 			</li>
 
 			<li>
-				<a href="#">Subscribe</a>
+				<a href="subscription.html">Subscribe</a>
 			</li>
 
 			<li>
