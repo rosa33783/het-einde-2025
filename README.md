@@ -91,7 +91,6 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken na afloop 3<sup>e</sup> werkgroep</summary>
 
   ### homepage en subscription breakdown: 
-  dynamische gedeeltes en pagina opzet
   <img src="readme-images/breakdownSchets.png" width="375px" alt="breakdown van de hele pagina">
 
 </details>
@@ -110,9 +109,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Agenda voor meeting
-  samen met je groepje opstellen
 
-  
+  vragen over menu,grid en feedback op code
   
 
   ### Verslag van meeting
@@ -133,11 +131,10 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor 2<sup>e</sup> voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+  tweede pagina ook opgestelt en css van homepagina aan het afronden. Nog moeite met responsive maken.
 
 
   ### Agenda voor meeting
-  samen met je groepje opstellen
 
   vragen:
   - Hoe maak ik het signupform op de homepage responsive
@@ -167,7 +164,29 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken na test in 9<sup>e</sup> werkgroep</summary>
 
   ### Bevindingen
-  Lijst met je bevindingen die in de test naar voren kwamen (geef ook aan wat er verbeterd is):
+  Content: dit was al in orde:)
+  
+  Global code: Ik heb de pagina's van titels voorzien en de html gevalideerd. Na de validatie kwam ik er achter dat sommige sections beter divs konden worden.
+  
+  Keyboard:Focus style is duidelijk en de volgorde is logisch
+  
+  Mobile and toch: knoppen iets groter gemaakt waardoor alles makkeljk aan te klikken is.
+  Een van de breaking points 768px misde ook op de echte homepage wat voor een hele rare tussenpagina zorgde en het is dus niet op de ipad te bekijken. Deze heb ik er bij verzonnen.
+
+  Headings: Duidelijke heading titels. Bij sommige sections heb ik geen titels maar het zijn wel duidelijk van elkaar te onderscheiden stukken content. Ze zouden als div's ook niet kloppen.
+
+  Lists: Ik heb veel gebruik gemaakt van ul's
+
+  Images: alt text bij alle images en ook alt text voor images waar text in staat(het telefoontje bij subscribe op de homepage)
+
+  Controls:buttons hebben aria-labels a elementen worden gebruikt voor links. niet alle buttons hebben een focus state
+
+  Appearance: Dark en lightmode zijn gemaakt en er is hoog contrast.
+
+  Animation: enige animations die ik had gebruikt zijn subtiel. Ik had sowieso responsive gekozen dus mijn animaties zijn minimaal.
+
+  color contrast:kleine schaduw toegevoegd aan de text van het main artikel want anders is het moeilijk leesbaar. 
+ 
 
 </details>
 
@@ -181,11 +200,9 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor 3<sup>e</sup> voortgang</summary>
 
   ### Stand van zaken
-  tweede pagina ook opgestelt.
-
-
+  bijna klaar met beide pagina's. Heel veel gespeeld met grid en de pagina's grotendeels responsive gemaakt. Tijdens de lessen ook gevraagd hoe ik de footer van subscriptions responsive kon maken. Het zijn detail tags en die standaard styling tegengaan wanneer het scherm groter wordt is heel moeilijk. Ik heb het advies gekregen om ze met javascript te laten open en dichtklappen omdat ik de layout van de footer anders kan maken met groot scherm dan.
+  
   ### Agenda voor meeting
-  samen met je groepje opstellen
 
   vragen:
   - De .hoofdgrid (bovenste gedeelte op de homepage) is moeilijk vorm te geven omdat alles mee lijkt te bewegen (verticaal) als ik het scherm kleiner en groter maakt. Hoe zorg ik dat alles op zijn plek blijft?
@@ -197,6 +214,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
+  uitkomsten
   - Volgens Ivo zag het er goed genoeg uit en zijn dat kleine details. Het is responsive geworden
     en ik begrijp grid beter door er mee te hebben moeten werken en dat is te zien.
   - Ja er moet een darkmode bij beide sites maar dit is heel makkelijk te doen met mediaquerys 
@@ -216,25 +234,34 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor eindgesprek</summary>
 
   ### Je uitkomst - karakteristiek screenshots:
-  <img src="readme-images/homepageMobile.html.png" width="375px" alt="uitomst opdracht 1">
-  <img src="readme-images/" width="375px" alt="uitomst opdracht 1">
+  <img src="readme-images/homepageMobile.html.png" width="375px" alt="homepage smallscreen">
+  
+  <img src="readme-images/homepage2ebreakingpoint.html.png" width="375px" alt="homepage 2e breakingpoint">
+  
+  <img src="readme-images/homepage3ebreakingpoint.html.png" width="375px" alt="homepage 3ebreakingpoint">
+
+  <img src="readme-images/homepagemenu.png" width="375px" alt="homepage 2ebreakingpoint">
+  <img src="readme-images/Screenshot 2025-09-30 at 13 54 36" width="375px" height="716" alt="submenu uitgeklapt">
+  <img src="readme-images/Screenshot 2025-09-30 at 13.54.57" width="375px" height="716" alt="submenu uitgeklapt">
+
+  <img src="readme-images/subscriptions.html.png" width="375px" alt="subscriptions smallscreen">
+   <img src="readme-images/subscriptions3ebreakingpoint.png" width="375px" alt="subscriptions 2ebreakingpoint">
+      <img src="readme-images/subscriptions4ebreakingpoint.png" width="375px" alt="subscriptions 3ebreakingpoint">
+            <img src="readme-images/subscriptions5ebreakingpoint.png" width="375px" alt="subscriptions 4ebreakingpoint">
+
+<img src="readme-images/subscriptions5ebreakingpoint.png" width="375px" alt="subscriptions 4ebreakingpoint">
+
 
 
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatjes
-
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="top">
+  Wat ik vooral heb meegenomen uit het maken van deze website is het werken met grid en @media. 
+  Ik denk dat ik hierbij verder ben gekomen dan dat ik dacht dat ik zou komen en heb toch dat best ingewikkelde menu weten te fixen. Het menu op de homepage splitst zich wanneer het scherm groter wordt.
 
 
   ### Dit was lastig/Is niet gelukt:
-  Korte omschrijving met plaatjes
-
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
-</details>
-
-
-
-
+  wat niet is gelukt is het veranderen van het derberliner logo tijdens dark en lightmode. Dit was geen svg maar een img. Ik wou bij darkmode de source veranderen naar de witte letters maar dit ging best moeizaam en opgegeven moment moest ik de keuze maken om mijn prioriteit ergens anders te laten. 
+  
+  Ook was dit een probleem bij sommige svg's. Bijvoorbeeld bij de socials wouden de svg's niet veranderen.
 
 ## Bronnenlijst
 
